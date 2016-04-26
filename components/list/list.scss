@@ -1,0 +1,30 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.list {
+  padding-bottom: 40px;
+  @include wrapper-full();
+}
+
+.inner {
+  @include wrapper-inner();
+}
+
+.bar {
+  background-color: #cccccc;
+  @include wrapper-full();
+
+  .inner {
+    display: table;
+    padding: 10px 0;
+  }
+}
+
+.title,
+.genres {
+    color: #ffffff;
+}
+
+.title {
+  border-right: dashed 1px #ffffff;
+}

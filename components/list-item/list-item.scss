@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.list-item {
+  list-style: none;
+  padding: 10px 0;
+  @include wrapper-full();
+
+  &:nth-child(odd) {
+    background-color: #fbfbfb;
+  }
+
+  &:nth-child(even) {
+    background-color: #eeeeee;
+  }
+}
+
+.title {
+  border-right: dashed 1px #cccccc;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: $break-small) {
+  .title {
+    border-right: none;
+  }
+}

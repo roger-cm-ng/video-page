@@ -1,0 +1,19 @@
+{
+  "plugins": ["jsx-a11y"],
+  "extends": "airbnb",
+  "rules": {
+    "jsx-a11y/img-uses-alt": 0,
+    "jsx-a11y/redundant-alt": 0,
+    "jsx-a11y/valid-aria-role": 0,
+    "comma-dangle": ["error", "never"],
+    "indent": 0,
+    "no-new": 0,
+    "guard-for-in": 0,
+    "no-param-reassign": 0,
+    "react/sort-comp": 0,
+    "max-len": 0,
+    "no-unused-vars": ["error", { "varsIgnorePattern": "coreStyles" }],
+    "react/jsx-indent-props": [1, 'tab']
+  },
+  "parser": "babel-eslint"
+}

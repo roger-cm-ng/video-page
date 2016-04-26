@@ -1,0 +1,17 @@
+.qa-list-enter {
+  opacity: 0;
+}
+
+.qa-list-enter.qa-list-enter-active {
+  opacity: 1;
+  transition: all 1s ease-in;
+}
+
+.qa-list-leave {
+  opacity: 1;
+}
+
+.qa-list-leave.qa-list-leave-active {
+  opacity: 0;
+  transition: all 200ms ease-in;
+}

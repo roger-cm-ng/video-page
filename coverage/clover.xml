@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1461122621111" clover="3.2.0">
+	<project timestamp="1461122621111"  name="All Files" >
+		<metrics statements="27"  coveredstatements="16"  conditionals="68"  coveredconditionals="34"  methods="24"  coveredmethods="16"  elements="119"  coveredelements="66"  complexity="0"  packages="3"  files="3"  classes="3"  loc="149"  ncloc="149" />
+		<package name="components.footer" >
+			<metrics statements="8"  coveredstatements="7"  conditionals="33"  coveredconditionals="17"  methods="10"  coveredmethods="8" />
+			<file name="footer.js"  path="D:\projects-git\hwl.PatternsLibrary\components\footer\footer.js" >
+				<metrics statements="8"  coveredstatements="7"  conditionals="33"  coveredconditionals="17"  methods="10"  coveredmethods="8" />
+				<line num="1"  count="1"  type="cond"  truecount="5"  falsecount="3" />
+				<line num="2"  count="1"  type="stmt" />
+				<line num="3"  count="1"  type="stmt" />
+				<line num="4"  count="1"  type="stmt" />
+				<line num="5"  count="5"  type="cond"  truecount="11"  falsecount="12" />
+				<line num="9"  count="1"  type="cond"  truecount="1"  falsecount="1" />
+				<line num="11"  count="0"  type="stmt" />
+				<line num="100"  count="1"  type="stmt" />
+			</file>
+		</package>
+		<package name="components.footer.search-site" >
+			<metrics statements="18"  coveredstatements="8"  conditionals="35"  coveredconditionals="17"  methods="14"  coveredmethods="8" />
+			<file name="search-site.js"  path="D:\projects-git\hwl.PatternsLibrary\components\footer\search-site\search-site.js" >
+				<metrics statements="18"  coveredstatements="8"  conditionals="35"  coveredconditionals="17"  methods="14"  coveredmethods="8" />
+				<line num="1"  count="5"  type="cond"  truecount="5"  falsecount="3" />
+				<line num="2"  count="1"  type="stmt" />
+				<line num="3"  count="3"  type="cond"  truecount="11"  falsecount="12" />
+				<line num="5"  count="1"  type="stmt" />
+				<line num="8"  count="1"  type="cond"  truecount="1"  falsecount="1" />
+				<line num="9"  count="1"  type="stmt" />
+				<line num="11"  count="0"  type="stmt" />
+				<line num="12"  count="0"  type="stmt" />
+				<line num="13"  count="0"  type="stmt" />
+				<line num="14"  count="1"  type="stmt" />
+				<line num="18"  count="0"  type="stmt" />
+				<line num="22"  count="0"  type="cond"  truecount="0"  falsecount="2" />
+				<line num="23"  count="0"  type="stmt" />
+				<line num="28"  count="0"  type="stmt" />
+				<line num="29"  count="0"  type="stmt" />
+				<line num="33"  count="0"  type="stmt" />
+				<line num="37"  count="0"  type="stmt" />
+				<line num="45"  count="1"  type="stmt" />
+			</file>
+		</package>
+		<package name="test-config" >
+			<metrics statements="1"  coveredstatements="1"  conditionals="0"  coveredconditionals="0"  methods="0"  coveredmethods="0" />
+			<file name="empty-module.js"  path="D:\projects-git\hwl.PatternsLibrary\test-config\empty-module.js" >
+				<metrics statements="1"  coveredstatements="1"  conditionals="0"  coveredconditionals="0"  methods="0"  coveredmethods="0" />
+				<line num="4"  count="2"  type="stmt" />
+			</file>
+		</package>
+	</project>
+</coverage>

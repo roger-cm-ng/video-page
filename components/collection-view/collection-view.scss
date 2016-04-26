@@ -1,0 +1,90 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.collection-view {
+  float: right;
+  margin-top: 5px;
+}
+
+.btn-list {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  height: 40px;
+  margin-right: 10px;
+  width: 40px;
+
+  .list-row {
+    height: 6px;
+    margin-left: 5px;
+    width: 28px;
+
+    &:first-child {
+      margin-top: 5px;
+    }
+
+    &:nth-child(2) {
+      margin-top: 5px;
+    }
+
+    &:last-child {
+      margin-top: 5px;
+    }
+
+    .list-left {
+      background-color: #e00;
+      float: left;
+      height: 6px;
+      margin-right: 4px;
+      width: 6px;
+    }
+
+    .list-right {
+      background-color: #e00;
+      float: left;
+      height: 6px;
+      width: 18px;
+    }
+  }
+}
+
+.btn-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  height: 40px;
+  width: 40px;
+
+  .card-square {
+    background-color: #e00;
+    float: left;
+    height: 11px;
+    margin: 5px 0 0 5px;
+    width: 11px;
+  }
+}
+
+.list .btn-list {
+  .list-row .list-left,
+  .list-row .list-right {
+    background-color: #cccccc;
+  }
+}
+
+.card .btn-card {
+  .card-square {
+    background-color: #cccccc;
+  }
+}
+
+@media (max-width: 402px) {
+  .collection-view {
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+  }
+}

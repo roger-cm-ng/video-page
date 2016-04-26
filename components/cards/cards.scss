@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.cards {
+  padding-bottom: 30px;
+  @include wrapper-full();
+}
+
+.inner {
+  @include wrapper-inner();
+}

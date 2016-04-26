@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.card {
+  height: 240px;
+  padding: 20px;
+}
+
+.inner {
+  color: #fafafa;
+  background-color: #323232;
+  border-radius: 4px;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
