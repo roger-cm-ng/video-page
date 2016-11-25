@@ -44,6 +44,7 @@ class App extends Component {
 	render() {
 		return (
 			<div style={{ opacity: appOpacity }}>
+				<h1>Test</h1>
 				<Header />
 				<FilterBar />
 				<ReactCSSTransitionGroup transitionName="qa-list" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
