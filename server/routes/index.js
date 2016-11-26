@@ -12,13 +12,13 @@ const store = createStoreWithMiddleware(AppCombinedReducers);
 const Index = express.Router();
 
 Index.get('/', (req, res) => {
-  const reduxState = escape(JSON.stringify(store.getState()));
-  const appElm = ReactDomServer.renderToString(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
+  // const reduxState = escape(JSON.stringify(store.getState()));
+  // const appElm = ReactDomServer.renderToString(
+  //   <Provider store={store}>
+  //     <App />
+  //   </Provider>
+  // );
 
-  res.render('index', { appElm, reduxState });
+  res.render('index');
 });
 export default Index;

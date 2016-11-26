@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Qantas Assure</title>
+    <title>FFX Blue</title>
   </head>
   <body>
-    <div class="js-qa-app">
-      <%- appElm %>
-    </div>
-    <script type="application/javascript">
-      window.__REDUX_STATE__ = '<%= reduxState %>';
+    <div class="js-weather-widget"></div>
+    <script src="bundles/ffx-blue-weather-widget.js"></script>
+    <script>
+      new FfxBlueWeatherWidget(
+        '.js-weather-widget',
+        {}
+      )
     </script>
-    <script src="js/qa-app.js"></script>
   </body>
 </html>
