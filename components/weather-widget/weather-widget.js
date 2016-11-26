@@ -2,39 +2,90 @@ import React, { Component } from 'react';
 import styleable from 'react-styleable';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import coreStyles from '../../styles/core.scss';
+import '../../styles/core.scss';
 import css from './weather-widget.scss';
-import weatherWidgetActions from './weather-widget-actions.js';
+import { getPosition } from '../helpers/utils';
+import { WEATHER_DATA_ACQUIRED, activateNoData, fetchGet } from './weather-widget-actions';
+import WeatherWidgetStateless from './weather-widget-stateless/weather-widget-stateless';
+import Loading from './loading/loading';
+import NoData from './no-data/no-data';
 
 @styleable(css)
 class WeatherWidget extends Component {
   static propTypes= {
     css: React.PropTypes.object,
-    weatherWidgetActions: React.PropTypes.func,
-    weatherWidgetReducer: React.PropTypes.object
+    weatherWidgetReducer: React.PropTypes.object,
+    fetchGet: React.PropTypes.func,
+    activateNoData: React.PropTypes.func,
+    options: React.PropTypes.object,
+    noDataReducer: React.PropTypes.bool
 	};
 
   componentWillMount() {
+    getPosition({
+      success: this.geoSuccess,
+      fail: this.loadFallBackOption
+    });
+  }
+
+  geoSuccess = (position) => {
+    const { options } = this.props;
+    this.props.fetchGet({
+      dataUrl: `${options.weatherUrl}?appid=${options.weatherApiKey}&lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${options.units}`,
+      dataAcquiredType: WEATHER_DATA_ACQUIRED,
+      failCallBack: this.loadFallBackOption
+    });
+  }
+
+  loadFallBackOption = () => {
+    const { options } = this.props;
+    this.props.fetchGet({
+      dataUrl: `${options.weatherUrl}?appid=${options.weatherApiKey}&q=${options.fallBackLocation}&units=${options.units}`,
+      dataAcquiredType: WEATHER_DATA_ACQUIRED,
+      failCallBack: this.noData
+    });
+  }
+
+  noData = () => {
+    this.props.activateNoData();
   }
 
   render() {
-    return (
-      <div className={`hwrld ${this.props.css.hwrld}`} >
-        <h1>Weather Widget</h1>
-      </div>
-    );
+    const { weatherWidgetReducer, noDataReducer, options } = this.props;
+    let elm;
+
+    if (noDataReducer) {
+      elm = (
+        <NoData />
+      );
+    } else if (!weatherWidgetReducer) {
+      elm = (
+        <Loading />
+      );
+    } else {
+      elm = (
+        <WeatherWidgetStateless
+          data={weatherWidgetReducer}
+          wind={options.wind}
+        />
+      );
+    }
+
+    return elm;
   }
 }
 
 function mapStateToProps(state) {
 	return {
-    weatherWidgetReducer: state.weatherWidgetReducer
+    weatherWidgetReducer: state.weatherWidgetReducer,
+    noDataReducer: state.noDataReducer
 	};
 }
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-    weatherWidgetActions
+    fetchGet,
+    activateNoData
   }, dispatch);
 }
 

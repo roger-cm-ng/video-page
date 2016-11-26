@@ -11,7 +11,11 @@
     <script>
       new FfxBlueWeatherWidget(
         '.js-weather-widget',
-        {}
+        {
+          fallBackLocation: 'Sydney',
+          units: 'metric',
+          wind: true
+        }
       )
     </script>
   </body>

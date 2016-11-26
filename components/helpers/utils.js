@@ -11,15 +11,16 @@ export function handleDefaults(defaultObj, dynamicObj) {
 	return defaultObj;
 }
 
-export function getPosition(settings) {
+export function getPosition({ settings, success, fail }) {
 	return new Promise((resolve, reject) => {
 		navigator.geolocation.getCurrentPosition(
 			(position) => {
 				resolve(position);
-				return position;
+				success(position);
 			},
 			(error) => {
 				reject(error);
+				fail();
 			},
 			settings
 		);
