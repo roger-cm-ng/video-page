@@ -13,7 +13,7 @@ export default class FfxBlueWeatherWidget {
   constructor(element, dynamicOptions) {
     const defaults = {
       weatherApiKey: '0662751880d435bb226a86660788e48c',
-      weatherUrl: 'https://api.openweathermap.org/data/2.5/weather',
+      weatherUrl: 'http://api.openweathermap.org/data/2.5/weather',
       fallBackLocation: 'Sydney',
       units: 'metric',
       wind: true

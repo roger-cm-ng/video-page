@@ -94,7 +94,7 @@
 	
 	    var defaults = {
 	      weatherApiKey: '0662751880d435bb226a86660788e48c',
-	      weatherUrl: 'https://api.openweathermap.org/data/2.5/weather',
+	      weatherUrl: 'http://api.openweathermap.org/data/2.5/weather',
 	      fallBackLocation: 'Sydney',
 	      units: 'metric',
 	      wind: true
@@ -43446,7 +43446,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../~/cssnext-loader!./../~/sass-loader!./../~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./core.scss */ 206);
+	var content = __webpack_require__(/*! !./../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../~/cssnext-loader!./../~/sass-loader!./../~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./core.scss */ 206);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../~/style-loader/addStyles.js */ 208)(content, {});
@@ -43455,8 +43455,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../node_modules/cssnext-loader/index.js!./../node_modules/sass-loader/index.js!./../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./core.scss", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../node_modules/cssnext-loader/index.js!./../node_modules/sass-loader/index.js!./../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./core.scss");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../node_modules/cssnext-loader/index.js!./../node_modules/sass-loader/index.js!./../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./core.scss", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../node_modules/cssnext-loader/index.js!./../node_modules/sass-loader/index.js!./../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./core.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -43468,7 +43468,7 @@
 /***/ },
 /* 206 */
 /*!*********************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./styles/core.scss ***!
+  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./styles/core.scss ***!
   \*********************************************************************************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -44059,7 +44059,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../../~/cssnext-loader!./../../~/sass-loader!./../../~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./weather-widget.scss */ 210);
+	var content = __webpack_require__(/*! !./../../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../../~/cssnext-loader!./../../~/sass-loader!./../../~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./weather-widget.scss */ 210);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../~/style-loader/addStyles.js */ 208)(content, {});
@@ -44068,8 +44068,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../node_modules/cssnext-loader/index.js!./../../node_modules/sass-loader/index.js!./../../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./weather-widget.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../node_modules/cssnext-loader/index.js!./../../node_modules/sass-loader/index.js!./../../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./weather-widget.scss");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../node_modules/cssnext-loader/index.js!./../../node_modules/sass-loader/index.js!./../../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./weather-widget.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../node_modules/cssnext-loader/index.js!./../../node_modules/sass-loader/index.js!./../../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./weather-widget.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -44081,7 +44081,7 @@
 /***/ },
 /* 210 */
 /*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./components/weather-widget/weather-widget.scss ***!
+  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./components/weather-widget/weather-widget.scss ***!
   \**************************************************************************************************************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -44162,7 +44162,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../../../~/cssnext-loader!./../../../~/sass-loader!./../../../~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./weather-widget-stateless.scss */ 213);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../../../~/cssnext-loader!./../../../~/sass-loader!./../../../~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./weather-widget-stateless.scss */ 213);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 208)(content, {});
@@ -44171,8 +44171,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./weather-widget-stateless.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./weather-widget-stateless.scss");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./weather-widget-stateless.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./weather-widget-stateless.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -44184,7 +44184,7 @@
 /***/ },
 /* 213 */
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./components/weather-widget/weather-widget-stateless/weather-widget-stateless.scss ***!
+  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./components/weather-widget/weather-widget-stateless/weather-widget-stateless.scss ***!
   \*************************************************************************************************************************************************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -44253,7 +44253,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../../../~/cssnext-loader!./../../../~/sass-loader!./../../../~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./loading.scss */ 216);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../../../~/cssnext-loader!./../../../~/sass-loader!./../../../~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./loading.scss */ 216);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 208)(content, {});
@@ -44262,8 +44262,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./loading.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./loading.scss");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./loading.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./loading.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -44275,7 +44275,7 @@
 /***/ },
 /* 216 */
 /*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./components/weather-widget/loading/loading.scss ***!
+  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./components/weather-widget/loading/loading.scss ***!
   \***************************************************************************************************************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
@@ -44344,7 +44344,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../../../~/cssnext-loader!./../../../~/sass-loader!./../../../~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./no-data.scss */ 219);
+	var content = __webpack_require__(/*! !./../../../~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./../../../~/cssnext-loader!./../../../~/sass-loader!./../../../~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./no-data.scss */ 219);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 208)(content, {});
@@ -44353,8 +44353,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./no-data.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./no-data.scss");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./no-data.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?modules&localIdentName=[local]---[hash:base64:5]!./../../../node_modules/cssnext-loader/index.js!./../../../node_modules/sass-loader/index.js!./../../../node_modules/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./no-data.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -44366,7 +44366,7 @@
 /***/ },
 /* 219 */
 /*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=vzz4ibwmsy1ll3di!./components/weather-widget/no-data/no-data.scss ***!
+  !*** ./~/css-loader?modules&localIdentName=[local]---[hash:base64:5]!./~/cssnext-loader!./~/sass-loader!./~/string-replace-webpack-plugin/loader.js?id=rnabzd0vtdpfogvi!./components/weather-widget/no-data/no-data.scss ***!
   \***************************************************************************************************************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
