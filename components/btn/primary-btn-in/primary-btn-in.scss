@@ -1,0 +1,25 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+:global(.hwrld).hwrld {
+  .inner {
+    background-color: $color-secondary;
+    border: 1px solid $color-secondary;
+    color: $color-bkgd;
+    @include btn();
+    &:hover{
+      background-color: #FCAF26;
+      border-color: #FCAF26;
+    }
+  }
+  .disable {
+    background-color: #fce5bb;
+    border-color: #fce5bb;
+    cursor: default;
+
+    &:hover{
+      background-color: #fce5bb;
+      border-color: #fce5bb;
+    }
+  }
+}

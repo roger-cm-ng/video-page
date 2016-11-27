@@ -146,14 +146,47 @@
 	opacity: $opacity;
 }
 
-// full width
-@mixin wrapper-full() {
-	float: left;
-	width: 100%;
+// vertical alignment
+@mixin vertical-align($top: 50%) {
+	position: relative;
+	top: $top;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
-@mixin wrapper-inner($max-width: $break-medium) {
-	margin: 0 auto;
-	max-width: $max-width;
-	width: 100%;
+@mixin btn(){
+	@include border-radius(4px);
+	cursor: pointer;
+	display: table;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	text-align: center;
+}
+
+@mixin separate-dot($color, $height, $width){
+	background-color: $color;
+	border-radius: 50%;
+	display: block;
+	float: left;
+	height: $height;
+	width: $width;
+}
+
+// transform
+@mixin transform($deg) {
+	transform:rotate($deg);
+	-webkit-transform:rotate($deg);
+	-moz-transform:rotate($deg);
+	-ms-transform:rotate($deg);
+	-o-transform:rotate($deg);
+}
+
+// transition
+@mixin transition($property, $duration, $timingFuntion){
+	-webkit-transition: $property $duration $timingFuntion;
+	-moz-transition: $property $duration $timingFuntion;
+	-o-transition: $property $duration $timingFuntion;
+	transition: $property $duration $timingFuntion;
 }

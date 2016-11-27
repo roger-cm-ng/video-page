@@ -1,7 +1,7 @@
 var StringReplacePlugin = require('string-replace-webpack-plugin');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var commons = require('./commons');
-var baseUrl = 'http://localhost:8080';
+var baseUrl = 'http://localhost:3000';
 
 console.log('development build');
 

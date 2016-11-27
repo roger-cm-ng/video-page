@@ -1,0 +1,41 @@
+@import "./variables";
+@import "./mixins";
+@import "./sprite-sheet-mixins";
+
+:global(.hwrld) {
+  :global(.rc-collapse) {
+    float: left;
+    width: 100%;
+    :global(.rc-collapse-item) {
+      :global(.rc-collapse-header) {
+        border-top: 1px solid $color-border;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px 20px;
+        :global(.arrow) {
+          @include plus("++BASE_URL++");
+          margin-top: -2px;
+          float: right;
+        }
+        &[aria-expanded=true] > :global(.arrow){
+          @include minus("++BASE_URL++");
+        }
+      }
+    }
+    :global(.rc-collapse-anim-active) {
+      @include transition(height,0.2s,ease-out);
+    }
+    :global(.rc-collapse-content) {
+      overflow: hidden;
+      color: #666;
+      background-color: #fff;
+      :global(.rc-collapse-content-box) {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    :global(.rc-collapse-content-inactive) {
+      display: none;
+    }
+  }
+}

@@ -6,16 +6,12 @@
     <title>FFX Blue</title>
   </head>
   <body>
-    <div class="js-weather-widget"></div>
-    <script src="bundles/ffx-blue-weather-widget.js"></script>
+    <div class="js-editor"></div>
+    <script src="bundles/ffx-blue-editor.js"></script>
     <script>
-      new FfxBlueWeatherWidget(
-        '.js-weather-widget',
-        {
-          fallBackLocation: 'Sydney',
-          units: 'metric',
-          wind: true
-        }
+      new FfxBlueEditor(
+        '.js-editor',
+        {}
       )
     </script>
   </body>
