@@ -4,15 +4,14 @@ const Api = express.Router();
 const Schema = mongoose.Schema;
 const mongodbUri = 'mongodb://ffx:ffx123@ds111748.mlab.com:11748/heroku_4fv3kgzm';
 
-mongoose.connect(mongodbUri, () => {
-  console.log('connected');
-});
+mongoose.connect(mongodbUri);
 
 const widgetSchema = new Schema({
   title: String,
   fallBackLocation: String,
   unit: String,
-  wind: Boolean
+  wind: Boolean,
+  created: Date
 });
 
 const Widgets = mongoose.model('widgets', widgetSchema);
@@ -33,6 +32,7 @@ Api.post('/insert', (req, res) => {
     fallBackLocation: req.body.fallBackLocation,
     unit: req.body.unit,
     wind: req.body.wind,
+    created: new Date()
   }
 
   const data = new Widgets(item);

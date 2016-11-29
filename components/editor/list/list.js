@@ -9,6 +9,7 @@ import { fetchGet } from '../../helpers/common-actions';
 import { LoadingModal } from '../../loading';
 import { WIDGETS_ACQUIRED } from './list-actions';
 import CopyAndPaste from '../copy-and-paste/copy-and-paste';
+import moment from 'moment';
 
 @styleable(css)
 class List extends Component {
@@ -51,6 +52,7 @@ class List extends Component {
               <div>Fall back location: {val.fallBackLocation}</div>
               <div>Unit: {val.unit}</div>
               <div>Wind: {val.wind ? 'yes' : 'no'}</div>
+              <div>Date created: {moment(val.created).format('DD-MM-YYYY')}</div>
               <CopyAndPaste
                 data={val}
               />
