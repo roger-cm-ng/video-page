@@ -1,4 +1,5 @@
 import express from 'express';
+import compression from 'compression';
 import path from 'path';
 // import favicon from 'serve-favicon';
 import logger from 'morgan';
@@ -8,6 +9,10 @@ import routes from './routes/index';
 import api from './routes/api';
 import weatherWidget from './routes/weather-widget';
 const app = express();
+
+// gzip
+app.use(compression()); //use compression
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
