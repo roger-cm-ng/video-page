@@ -1,30 +1,29 @@
 import express from 'express';
+import mongoose from 'mongoose'
 const Api = express.Router();
+const Schema = mongoose.Schema;
+const mongodbUri = 'mongodb://ffx:ffx123@ds111748.mlab.com:11748/heroku_4fv3kgzm';
 
-Api
-.route('/widgets')
-.get((req, res) => {
-  const responseJson = {
-    status: 200,
-    results: [
-      {
-        title: 'The quick brown fox',
-        unit: 'metric',
-        wind: true
-      },
-      {
-        title: 'Rain in Spain',
-        unit: 'metric',
-        wind: true
-      },
-      {
-        title: 'Junmps over the lazy fox',
-        unit: 'imperial',
-        wind: true
-      }
-    ]
-  };
-  res.json(responseJson);
+mongoose.connect(mongodbUri, () => {
+  console.log('connected');
+});
+
+const widgetSchema = new Schema({
+  title: String,
+  unit: String,
+  wind: Boolean
+});
+
+const Widgets = mongoose.model('widgets', widgetSchema);
+
+Api.get('/widgets', (req, res) => {
+  Widgets.find()
+    .then((results) => {
+      res.json({
+        status: 200,
+        results
+      });
+    })
 });
 
 export default Api;
