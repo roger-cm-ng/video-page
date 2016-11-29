@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var StringReplacePlugin = require('string-replace-webpack-plugin');
 var commons = require('./commons');
-var baseUrl = '//cdnimages-live.azureedge.net/cdn/ui-pattern-library/prod/latest';
+var baseUrl = '//morning-island-22730.herokuapp.com';
 
 console.log('production build');
 
