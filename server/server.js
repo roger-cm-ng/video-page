@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import routes from './routes/index';
 import api from './routes/api';
+import weatherWidget from './routes/weather-widget';
 const app = express();
 
 // view engine setup
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use('/', routes);
 app.use('/api', api);
+app.use('/weather-widget', weatherWidget);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

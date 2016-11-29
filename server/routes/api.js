@@ -10,13 +10,14 @@ mongoose.connect(mongodbUri, () => {
 
 const widgetSchema = new Schema({
   title: String,
+  fallBackLocation: String,
   unit: String,
   wind: Boolean
 });
 
 const Widgets = mongoose.model('widgets', widgetSchema);
 
-Api.get('/widgets', (req, res) => {
+Api.get('/get-all', (req, res) => {
   Widgets.find()
     .then((results) => {
       res.json({
@@ -24,6 +25,26 @@ Api.get('/widgets', (req, res) => {
         results
       });
     })
+});
+
+Api.post('/insert', (req, res) => {
+  const item = {
+    title: req.body.title,
+    fallBackLocation: req.body.fallBackLocation,
+    unit: req.body.unit,
+    wind: req.body.wind,
+  }
+
+  const data = new Widgets(item);
+  data.save(() => {
+    Widgets.find()
+      .then((results) => {
+        res.json({
+          status: 200,
+          results
+        });
+      })
+  });
 });
 
 export default Api;

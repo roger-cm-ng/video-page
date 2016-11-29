@@ -8,6 +8,7 @@ import { loadModalContent, closeModal } from '../../details-modal/details-modal-
 import { fetchGet } from '../../helpers/common-actions';
 import { LoadingModal } from '../../loading';
 import { WIDGETS_ACQUIRED } from './list-actions';
+import CopyAndPaste from '../copy-and-paste/copy-and-paste';
 
 @styleable(css)
 class List extends Component {
@@ -29,7 +30,7 @@ class List extends Component {
       vis: true
     });
     this.props.fetchGet({
-      dataUrl: '/api/widgets',
+      dataUrl: '/api/get-all',
       dataAcquiredType: WIDGETS_ACQUIRED,
       successCallBack: this.widgetsLoaded
     });
@@ -44,11 +45,15 @@ class List extends Component {
     return (
       <div className={`hwrld ${this.props.css.hwrld}`} >
         {
-          listReducer.map((val, ind) => (
+          listReducer.reverse().map((val, ind) => (
             <div key={ind}>
               <div>Title: {val.title}</div>
+              <div>Fall back location: {val.fallBackLocation}</div>
               <div>Unit: {val.unit}</div>
               <div>Wind: {val.wind ? 'yes' : 'no'}</div>
+              <CopyAndPaste
+                data={val}
+              />
               <hr />
             </div>
           ))

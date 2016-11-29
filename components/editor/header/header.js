@@ -5,7 +5,7 @@ import css from './header.scss';
 
 const Header = () => (
   <div className={`hwrld ${css.hwrld}`}>
-
+    <h1>Fairfax media</h1>
   </div>
 );
 

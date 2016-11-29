@@ -1,0 +1,78 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+@import "../../../styles/sprite-sheet-mixins";
+
+@mixin commons() {
+  .bad-data {
+    color: $color-secondary;
+    margin-top: 5px;
+  }
+}
+
+@mixin break-large() {
+}
+
+@mixin break-small() {
+  .btn-mini, .btn-full, .btn-rail, .btn-compact {
+    width: 100%;
+  }
+}
+
+:global(.hwrld).hwrld {
+  &.mini {
+    @include commons();
+    .btn-mini {
+      width: 100%;
+    }
+
+    @media (min-width: $break-small + 1px) {
+      @include break-large();
+    }
+
+    @media (max-width: $break-small) {
+      @include break-small();
+    }
+  }
+
+  &.full {
+    @include commons();
+
+    @media (min-width: $break-small + 1px) {
+      @include break-large();
+      .btn-full {
+        width: 35%;
+      }
+    }
+
+    @media (max-width: $break-small) {
+      @include break-small();
+    }
+  }
+
+  &.rail {
+    @include commons();
+    .btn-rail {
+      width: 100%;
+    }
+
+    @media (min-width: $break-small + 1px) {
+      @include break-large();
+    }
+
+    @media (max-width: $break-small) {
+      @include break-small();
+    }
+  }
+
+  &.compact {
+    @include commons();
+
+    @media (min-width: $break-small + 1px) {
+      @include break-large();
+    }
+
+    @media (max-width: $break-small) {
+      @include break-small();
+    }
+  }
+}

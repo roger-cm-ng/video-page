@@ -8,6 +8,8 @@ import editorActions from './editor-actions.js';
 import DetailsModal from '../details-modal/details-modal';
 import AsyncErrorHandler from '../async-error-handler/async-error-handler';
 import List from './list/list';
+import Edit from './edit/edit';
+import Header from './header/header';
 
 @styleable(css)
 class Editor extends Component {
@@ -24,7 +26,8 @@ class Editor extends Component {
       <div className={`hwrld ${css.hwrld}`} >
         <DetailsModal />
         <AsyncErrorHandler />
-        <h1>Editor</h1>
+        <Header />
+        <Edit />
         <List />
       </div>
     );
