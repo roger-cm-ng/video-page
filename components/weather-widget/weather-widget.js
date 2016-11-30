@@ -31,7 +31,7 @@ class WeatherWidget extends Component {
   geoSuccess = (position) => {
     const { options } = this.props;
     this.props.fetchGet({
-      dataUrl: `${options.weatherUrl}?appid=${options.weatherApiKey}&lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${options.units}`,
+      dataUrl: `${options.weatherUrl}?appid=${options.weatherApiKey}&lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${options.unit}`,
       dataAcquiredType: WEATHER_DATA_ACQUIRED,
       failCallBack: this.loadFallBackOption
     });
@@ -40,7 +40,7 @@ class WeatherWidget extends Component {
   loadFallBackOption = () => {
     const { options } = this.props;
     this.props.fetchGet({
-      dataUrl: `${options.weatherUrl}?appid=${options.weatherApiKey}&q=${options.fallBackLocation}&units=${options.units}`,
+      dataUrl: `${options.weatherUrl}?appid=${options.weatherApiKey}&q=${options.fallBackLocation}&units=${options.unit}`,
       dataAcquiredType: WEATHER_DATA_ACQUIRED,
       failCallBack: this.noData
     });
@@ -67,11 +67,16 @@ class WeatherWidget extends Component {
         <WeatherWidgetStateless
           data={weatherWidgetReducer}
           wind={options.wind}
+          unit={options.unit}
         />
       );
     }
 
-    return elm;
+    return (
+      <div className={`hwrld ${css.hwrld}`}>
+        {elm}
+      </div>
+    );
   }
 }
 

@@ -5,7 +5,7 @@ import css from './loading.scss';
 
 const Loading = () => (
   <div className={`hwrld ${css.hwrld}`}>
-    <h1>Loading...</h1>
+    <div className={css.loader}>Loading weather :)</div>
   </div>
 );
 

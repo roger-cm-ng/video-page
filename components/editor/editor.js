@@ -27,8 +27,10 @@ class Editor extends Component {
         <DetailsModal />
         <AsyncErrorHandler />
         <Header />
-        <Edit />
-        <List />
+        <div className={css.wrapper}>
+          <Edit />
+          <List />
+        </div>
       </div>
     );
   }

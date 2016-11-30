@@ -1,3 +1,13 @@
 :global(.hwrld).hwrld {
-
+  padding: 40px 20px;
+  text-align: center;
+  .err {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  .wombat {
+    color: #d1dfff;
+    font-size: 14px;
+  }
 }

@@ -1,3 +1,10 @@
-:global(.hwrld).hwrld {
+@import "../../styles/variables";
 
+:global(.hwrld).hwrld {
+  float: left;
+  width: 100%;
+  .wrapper {
+    margin: 0 auto;
+    max-width: $break-medium;
+  }
 }

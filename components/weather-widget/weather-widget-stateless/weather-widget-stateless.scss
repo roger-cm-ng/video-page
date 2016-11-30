@@ -1,3 +1,80 @@
 :global(.hwrld).hwrld {
+  .top-left {
+    float: left;
+    height: 100px;
+    padding: 10px;
+    width: 150px;
 
+    .location {
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    .time {
+      color: #d1dfff;
+      font-size: 14px;
+    }
+
+    .condition {
+      color: #d1dfff;
+      margin-top: 2px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .top-right {
+    color: #ffffff;
+    float: left;
+    height: 100px;
+    padding-top: 10px;
+    width: 150px;
+
+    .temp {
+      text-align: center;
+      font-size: 55px;
+      .num {
+        font-weight: bold;
+      }
+      .deg {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .bottom {
+    background-color: #eeeeee;
+    border: 1px solid #dddddd;
+    float: left;
+    height: 60px;
+    padding: 10px;
+    position: relative;
+    width: 300px;
+
+
+    .wind {
+      float: left;
+      min-height: 20px;
+      width: 50%;
+
+      .wind-txt {
+        font-weight: bold;
+      }
+    }
+
+    .min-max-temp {
+      float: left;
+      text-align: right;
+      width: 50%;
+    }
+
+    .powered {
+      bottom: 5px;
+      font-size: 10px;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+  }
 }

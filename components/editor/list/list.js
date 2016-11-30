@@ -44,23 +44,28 @@ class List extends Component {
   render() {
     const { listReducer } = this.props;
     return (
-      <div className={`hwrld ${this.props.css.hwrld}`} >
+      <ul className={`hwrld ${this.props.css.hwrld}`} >
         {
           listReducer.reverse().map((val, ind) => (
-            <div key={ind}>
-              <div>Title: {val.title}</div>
-              <div>Fall back location: {val.fallBackLocation}</div>
-              <div>Unit: {val.unit}</div>
-              <div>Wind: {val.wind ? 'yes' : 'no'}</div>
-              <div>Date created: {moment(val.created).format('DD-MM-YYYY')}</div>
-              <CopyAndPaste
-                data={val}
-              />
-              <hr />
-            </div>
+            <li key={ind}>
+              <div className={css.left}>
+                <div><span className={css.label}>title</span> <span className={css.content}>{val.title}</span></div>
+                <div><span className={css.label}>fall back location</span> <span className={css.content}>{val.fallBackLocation}</span></div>
+                <div><span className={css.label}>unit</span> <span className={css.content}>{val.unit}</span></div>
+                <div><span className={css.label}>wind</span> <span className={css.content}>{val.wind ? 'yes' : 'no'}</span></div>
+                <div><span className={css.label}>date created</span> <span className={css.content}>{moment(val.created).format('DD-MM-YYYY')}</span></div>
+              </div>
+
+              <div className={css.right}>
+                <CopyAndPaste
+                  data={val}
+                />
+              </div>
+
+            </li>
           ))
         }
-      </div>
+      </ul>
     );
   }
 }

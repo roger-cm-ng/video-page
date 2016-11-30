@@ -1,4 +1,6 @@
+@import "../../../styles/variables";
+
 :global(.hwrld).hwrld {
-  color: #ff0000;
+  color: $color-secondary;
   margin-top: 5px;
 }

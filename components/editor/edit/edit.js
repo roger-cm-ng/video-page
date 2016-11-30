@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../../../styles/core.scss';
 import css from './edit.scss';
-import { changeEditFormData, activateAllErrorMsgs } from './edit-actions';
+import { changeEditFormData, activateAllErrorMsgs, resetEditFormData } from './edit-actions';
 import { Textfield } from '../../form';
 import { ErrorGeneric } from '../../error';
 import FormCta from '../form-cta/form-cta';
@@ -19,6 +19,7 @@ class Edit extends Component {
     css: React.PropTypes.object,
     editFormReducer: React.PropTypes.object,
     changeEditFormData: React.PropTypes.func,
+    resetEditFormData: React.PropTypes.func,
     activateAllErrorMsgs: React.PropTypes.func,
     loadModalContent: React.PropTypes.func,
     closeModal: React.PropTypes.func,
@@ -57,6 +58,7 @@ class Edit extends Component {
 
   widgetInserted = () => {
     this.props.closeModal();
+    this.props.resetEditFormData();
   }
 
   unitToggle = (val) => {
@@ -74,55 +76,59 @@ class Edit extends Component {
 
     return (
       <div className={`hwrld ${css.hwrld}`} >
-        <div>
-          <div>Title</div>
+        <p>Fill in the form and get the weather widget code</p>
+
+        <div className={css['form-chunk']}>
           <Textfield
             callBack={this.props.changeEditFormData}
             ticket={'title'}
             value={editFormReducer.title.content}
+            label={'Title'}
           />
           <ErrorGeneric
             validation={editFormReducer.title}
           />
         </div>
 
-        <div>
-          <div>Fall back location</div>
+        <div className={css['form-chunk']}>
           <Textfield
             callBack={this.props.changeEditFormData}
             ticket={'fallBackLocation'}
             value={editFormReducer.fallBackLocation.content}
+            label={'Fall back location'}
           />
           <ErrorGeneric
             validation={editFormReducer.fallBackLocation}
           />
         </div>
 
-        <div>
-          <div>Unit</div>
+        <div className={css['form-chunk']}>
           <ul className={css.unit}>
             <li
-              className={editFormReducer.unit.content === 'metric' ? css.active : ''}
+              className={editFormReducer.unit.content === 'metric' ? css['unit-active'] : ''}
               onClick={() => this.unitToggle('metric')}
             >
-              metric
+              <i className={css['unit-round']}></i>
+              <span className={css['unit-txt']}>metric</span>
             </li>
             <li
-              className={editFormReducer.unit.content === 'imperial' ? css.active : ''}
+              className={editFormReducer.unit.content === 'imperial' ? css['unit-active'] : ''}
               onClick={() => this.unitToggle('imperial')}
             >
-              imperial
+              <i className={css['unit-round']}></i>
+              <span className={css['unit-txt']}>imperial</span>
             </li>
 
           </ul>
         </div>
 
-        <div>
+        <div className={css['form-chunk']}>
           <div
-            className={`${css.wind} ${editFormReducer.wind.content ? css.active : ''}`}
+            className={`${css.wind} ${editFormReducer.wind.content ? css['wind-active'] : ''}`}
             onClick={() => this.windToggle()}
           >
-            Wind
+            <i className={css['wind-square']}></i>
+            <span className={css['wind-txt']}>wind</span>
           </div>
         </div>
 
@@ -149,7 +155,8 @@ function mapDispatchToProps(dispatch) {
     activateAllErrorMsgs,
     loadModalContent,
     fetchPost,
-    closeModal
+    closeModal,
+    resetEditFormData
   }, dispatch);
 }
 

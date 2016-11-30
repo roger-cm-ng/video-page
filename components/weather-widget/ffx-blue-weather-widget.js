@@ -15,7 +15,7 @@ export default class FfxBlueWeatherWidget {
       weatherApiKey: '0662751880d435bb226a86660788e48c',
       weatherUrl: '//api.openweathermap.org/data/2.5/weather',
       fallBackLocation: 'Sydney',
-      units: 'metric',
+      unit: 'metric',
       wind: true
     };
 		this.element = element;

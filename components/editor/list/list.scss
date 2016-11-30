@@ -1,3 +1,57 @@
+@import "../../../styles/variables";
+
 :global(.hwrld).hwrld {
+  float: left;
   margin-top: 20px;
+  width: 100%;
+
+  li {
+    background-color: #333745;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    float: left;
+    font-size: 18px;
+    padding: 20px;
+    width: 100%;
+
+    .left {
+      .label {
+        color: #969db1;
+      }
+      .content {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media (min-width: $break-small + 1px) {
+  :global(.hwrld).hwrld {
+    li {
+      .left {
+        float: left;
+        width: 50%;
+      }
+      .right {
+        float: left;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: $break-small) {
+  :global(.hwrld).hwrld {
+    li {
+      .left {
+        float: left;
+        width: 100%;
+      }
+      .right {
+        float: left;
+        margin-top: 20px;
+        width: 100%;
+      }
+    }
+  }
 }

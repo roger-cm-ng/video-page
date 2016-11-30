@@ -5,7 +5,9 @@ import css from './header.scss';
 
 const Header = () => (
   <div className={`hwrld ${css.hwrld}`}>
-    <h1>Fairfax media</h1>
+    <a href="http://www.fairfaxmedia.com.au/" target="_blank">
+      <img src="/images/bitmaps/fairfax-logo-whitebg.png" />
+    </a>
   </div>
 );
 

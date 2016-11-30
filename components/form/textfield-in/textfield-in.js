@@ -9,32 +9,37 @@ class TextfieldIn extends Component {
     callBack: React.PropTypes.func,
     ticket: React.PropTypes.string,
     value: React.PropTypes.string,
-    keyPressCallBack: React.PropTypes.func
+    keyPressCallBack: React.PropTypes.func,
+    label: React.PropTypes.string
   };
 
   constructor(props) {
     super(props);
     this.fieldChanged = false;
     this.state = {
-      val: props.value
+      val: props.value,
+      focus: false
     };
   }
 
   render() {
     return (
-    <div className={`hwrld ${css.hwrld}`}>
-      <div className={`textfield ${css.textfield}`}>
-        <input
-          type="text"
-          value={this.fieldChanged ? this.state.val : this.props.value}
-          onChange={(evt) => {
-            this.fieldChanged = true;
-            return this.setState({ val: evt.target.value });
-          }}
-          onBlur={() => this.props.callBack(this.props.ticket, this.fieldChanged ? this.state.val : this.props.value)}
-          onKeyPress={this.props.keyPressCallBack}
-        />
-      </div>
+    <div className={`hwrld ${css.hwrld} ${this.state.focus ? css.active : ''} ${this.props.value.length !== 0 ? css.filled : ''}`}>
+      <div className={css.label}>{this.props.label}</div>
+      <div className={css.box}></div>
+      <input
+        type="text"
+        value={this.props.value}
+        onChange={(evt) => this.props.callBack(this.props.ticket, evt.target.value)}
+        onBlur={() => {
+          this.setState({ focus: false });
+        }}
+        onFocus={() => {
+          this.setState({ focus: true });
+        }}
+        onKeyPress={this.props.keyPressCallBack}
+
+      />
     </div>
     );
   }

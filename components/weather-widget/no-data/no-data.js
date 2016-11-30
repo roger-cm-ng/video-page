@@ -5,7 +5,8 @@ import css from './no-data.scss';
 
 const NoData = () => (
   <div className={`hwrld ${css.hwrld}`}>
-    <h1>No data</h1>
+    <div className={css.err}>Error connecting :(</div>
+    <div className={css.wombat}>But if I'm a wombat and I'm a wombat, am I a wombat?</div>
   </div>
 );
 

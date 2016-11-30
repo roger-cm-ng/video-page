@@ -3,23 +3,18 @@
 
 :global(.hwrld).hwrld {
   .inner {
-    background-color: $color-secondary;
-    border: 1px solid $color-secondary;
-    color: $color-bkgd;
-    @include btn();
-    &:hover{
-      background-color: #FCAF26;
-      border-color: #FCAF26;
-    }
-  }
-  .disable {
-    background-color: #fce5bb;
-    border-color: #fce5bb;
-    cursor: default;
+    background-color: #0077c5;
+    color: #ffffff;
+    cursor: pointer;
+  	display: table;
+  	font-size: 20px;
+  	padding: 10px 80px;
+  	text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover{
-      background-color: #fce5bb;
-      border-color: #fce5bb;
+      background-color: #ffffff;
+      color: #0077c5;
     }
   }
 }
