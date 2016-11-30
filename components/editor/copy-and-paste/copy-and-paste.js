@@ -8,7 +8,7 @@ const CopyAndPaste = ({ data }) => (
     <div className={css.instruction}>Copy and paste the code below in the body of the website</div>
     <p className={css.code}>
       &lt;div class=&quot;js-ffx-blue-weather-widget&quot;&gt;&lt;/div&gt;
-      &lt;script src=&quot;bundles/ffx-blue-weather-widget.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;http://morning-island-22730.herokuapp.com/bundles/ffx-blue-weather-widget.js&quot;&gt;&lt;/script&gt;
       &lt;script&gt;
         new FfxBlueWeatherWidget&#40;
           '.js-ffx-blue-weather-widget',
