@@ -1,4 +1,3 @@
-import UnJQ from 'unjq-ajax';
 import queryString from 'simple-query-string';
 import _ from 'lodash';
 import commaIt from 'comma-it';
@@ -25,17 +24,6 @@ export function getPosition({ settings, success, fail }) {
 			settings
 		);
   });
-}
-
-export function ajaxPromise(dataUrl, data) {
-	return new Promise((resolve) => {
-		UnJQ.post(dataUrl,
-			data,
-			(resp) => {
-				resolve(resp);
-			},
-			'json');
-	});
 }
 
 export function convertQueryStringToJson() {
