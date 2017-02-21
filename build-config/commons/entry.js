@@ -1,5 +1,5 @@
 module.exports = function() {
   return {
-    'ffx-blue-editor': './components/editor/ffx-blue-editor'
+    'hwrld-reload': './components/reload/hwrld-reload'
 	}
 }

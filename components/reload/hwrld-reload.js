@@ -3,33 +3,33 @@ import ReactDom from 'react-dom';
 import { handleDefaults } from '../helpers/utils';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import EditorCombinedReducers from './editor-combined-reducers';
-import Editor from './editor';
+import ReloadCombinedReducers from './reload-combined-reducers';
+import Reload from './reload';
 import thunk from 'redux-thunk';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
-export default class FfxBlueEditor {
+export default class HwrldReload {
   constructor(element, dynamicOptions) {
     const defaults = {};
-		this.element = element;
+    this.element = element;
 		this.options = handleDefaults(defaults, dynamicOptions);
 		this.renderElm();
   }
 
 	renderElm() {
     const store = createStoreWithMiddleware(
-      EditorCombinedReducers,
+      ReloadCombinedReducers,
       window.devToolsExtension ? window.devToolsExtension() : f => f
     );
-		ReactDom.render(
-			<Provider store={store}>
-				<Editor options={this.options} />
+
+    ReactDom.render(
+      <Provider store={store}>
+				<Reload options={this.options} />
 			</Provider>
 			,
-			document.querySelector(this.element)
-    );
-	}
+			document.querySelector(this.element));
+    }
 }
 
-window.FfxBlueEditor = FfxBlueEditor;
+window.HwrldReload = HwrldReload;
