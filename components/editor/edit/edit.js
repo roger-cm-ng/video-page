@@ -76,7 +76,7 @@ class Edit extends Component {
 
     return (
       <div className={`hwrld ${css.hwrld}`} >
-        <p>Fill in the form and get the weather widget code</p>
+        <p>XXX Fill in the form and get the weather widget code</p>
 
         <div className={css['form-chunk']}>
           <Textfield
