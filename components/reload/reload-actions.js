@@ -1,7 +1,7 @@
-export const ACTION = 'ACTION';
-export function reloadAction(payload) {
+export const ACTIONED = 'ACTIONED';
+export function action(payload) {
   return {
-    type: ACTION,
-		payload
+    type: ACTIONED,
+      payload
   };
 }

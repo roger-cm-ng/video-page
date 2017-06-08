@@ -1,5 +1,5 @@
 module.exports = function() {
   return {
-    'hwrld-reload': './components/reload/hwrld-reload'
+    'entry-reload': './components/reload/entry-reload'
 	}
 }

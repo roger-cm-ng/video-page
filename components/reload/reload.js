@@ -4,21 +4,21 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../../styles/core.scss';
 import css from './reload.scss';
-import reloadActions from './reload-actions.js';
+import { action } from './reload-actions.js';
 
 @styleable(css)
 class Reload extends Component {
   static propTypes= {
     css: React.PropTypes.object,
-    reloadActions: React.PropTypes.func,
+    action: React.PropTypes.func,
     reloadReducer: React.PropTypes.object
-	};
+  };
 
   componentWillUpdate() {}
 
   render() {
     return (
-      <div className={`hwrld ${this.props.css.hwrld}`} >
+      <div className={css.component} >
         <h1>Reload</h1>
       </div>
     );
@@ -26,14 +26,14 @@ class Reload extends Component {
 }
 
 function mapStateToProps(state) {
-	return {
+  return {
     reloadReducer: state.reloadReducer
 	};
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({
-    reloadActions
+  return bindActionCreators({
+    action
   }, dispatch);
 }
 

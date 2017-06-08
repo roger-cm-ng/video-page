@@ -1,8 +1,8 @@
-import { ACTION } from 'reload-actions';
+import { ACTIONED } from './reload-actions';
 
 export default function (state = null, action) {
   switch (action.type) {
-    case ACTION:
+    case ACTIONED:
       return action.payload;
 		default:
 	}

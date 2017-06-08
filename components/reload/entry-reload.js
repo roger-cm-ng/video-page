@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
-export default class HwrldReload {
+export default class EntryReload {
   constructor(element, dynamicOptions) {
     const defaults = {};
     this.element = element;
@@ -32,4 +32,4 @@ export default class HwrldReload {
     }
 }
 
-window.HwrldReload = HwrldReload;
+window.EntryReload = EntryReload;
