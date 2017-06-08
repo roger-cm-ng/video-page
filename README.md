@@ -16,11 +16,11 @@ To start new component
 
 Navigate to *components* folder and run
 
-**stubs-react --c <component-name> --b for entry component** or
+**stubs-react --c component-name --b** for entry component or
 
-**stubs-react --c <component-name> for redux component** or
+**stubs-react --c component-name** for redux component or
 
-**stubs-react --c <component-name> --s for stateless component**
+**stubs-react --c component-name --s** for stateless component
 
 To specify a new or additional entry point
 ===================================
