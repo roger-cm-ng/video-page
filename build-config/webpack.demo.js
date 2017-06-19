@@ -1,7 +1,7 @@
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var commons = require('./commons');
 
-console.log('dev build');
+console.log('demo build');
 
 module.exports = {
 	resolve: commons.resolve(),
@@ -11,8 +11,6 @@ module.exports = {
 	entry: commons.entry(),
 
 	output: commons.output(),
-
-	watch: true,
 
 	plugins: [
 		commons.providePlugin(),

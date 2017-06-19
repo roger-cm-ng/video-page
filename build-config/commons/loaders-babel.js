@@ -1,6 +1,6 @@
 module.exports = function() {
   return {
-    test: /\.(es6|js)$/,
+    test: /\.js$/,
     exclude: /node_modules/,
     loaders: ['babel-loader']
   }

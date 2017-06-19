@@ -1,7 +1,8 @@
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var commons = require('./commons');
+var webpack = require('webpack');
 
-console.log('dev build');
+console.log('prod build');
 
 module.exports = {
 	resolve: commons.resolve(),
@@ -12,12 +13,20 @@ module.exports = {
 
 	output: commons.output(),
 
-	watch: true,
-
 	plugins: [
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify('production')
+			}
+		}),
 		commons.providePlugin(),
 		new ProgressBarPlugin(),
-		commons.stylelintPlugin()
+		commons.stylelintPlugin(),
+		new webpack.optimize.UglifyJsPlugin({
+			compress:{
+				warnings: true
+			}
+		})
 	],
 
 	devServer: commons.devServer(),

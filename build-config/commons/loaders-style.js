@@ -2,6 +2,6 @@ module.exports = function() {
   return {
     test: /\.scss/,
     exclude: /node_modules/,
-    loaders: ['style', 'css?modules&localIdentName=[local]---[hash:base64:5]', 'cssnext', 'sass']
+    loaders: ['style-loader', 'css-loader?modules&localIdentName=[local]---[hash:base64:5]', 'cssnext-loader', 'sass-loader']
   }
 }

@@ -3,9 +3,10 @@ var webpack = require('webpack');
 
 module.exports = function() {
   return {
-		root: [
-			path.resolve(path.join(__dirname, '..'))
-		],
-		extensions: ['', '.js', '.es6']
+    modules: [
+      path.join(__dirname, "src"),
+      "node_modules"
+    ],
+		extensions: ['*', '.js', '.es6']
 	}
 }
