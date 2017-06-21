@@ -5,8 +5,6 @@ import { bindActionCreators } from 'redux';
 import '../../styles/core.scss';
 import css from './reload.scss';
 import { action } from './reload-actions';
-import Test from '../test/test';
-import TestStateless from '../test-stateless/test-stateless';
 
 @styleable(css)
 class Reload extends Component {
@@ -22,8 +20,6 @@ class Reload extends Component {
     return (
       <div className={css.component} >
         <h1>Component</h1>
-				<Test />
-				<TestStateless />
       </div>
     );
   }
