@@ -23,10 +23,17 @@ Navigate to *components* folder and run
 **stubs-react --c component-name --s** for stateless component
 
 To specify a new or additional entry point
-===================================
+==========================================
 
 Open *build-config/commons/entry.js*
 
 Add **'bundle-file-name': 'path-to-entry-js'**
 
 The bundled file will be created in *public/bundles*
+
+Naming convention for component
+===============================
+
+Please use kebab-case, the class, action and reducer names will be generated in corresponding pascal and camel names
+
+DO NOT USE pascal-case or camel-case to name your component
