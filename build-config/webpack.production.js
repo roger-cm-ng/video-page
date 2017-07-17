@@ -2,7 +2,9 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var commons = require('./commons');
 var webpack = require('webpack');
 
-console.log('prod build');
+if (!process.env.ASSET_CDN_PATH) {
+    throw 'No asset CDN path specified. Did you forget to define it? (In trooper env, or use cross-env)';
+}
 
 module.exports = {
 	resolve: commons.resolve(),
@@ -33,10 +35,13 @@ module.exports = {
 
 	module: {
 		rules: [
-      commons.preloadersEslint(),
+			commons.preloadersEslint(),
 			commons.loadersBabel(),
 			commons.loadersStyle(),
-			commons.loadersJson()
+			commons.loadersJson(),
+			commons.loadersImg(),
+      // commons.loadersImages(process.env.ASSET_CDN_PATH),
+			commons.loadersSvg()
     ]
 	}
 }

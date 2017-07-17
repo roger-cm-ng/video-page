@@ -1,8 +1,6 @@
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var commons = require('./commons');
 
-console.log('dev build');
-
 module.exports = {
 	resolve: commons.resolve(),
 
@@ -27,7 +25,10 @@ module.exports = {
       commons.preloadersEslint(),
 			commons.loadersBabel(),
 			commons.loadersStyle(),
-			commons.loadersJson()
+			commons.loadersJson(),
+			commons.loadersImg(),
+			// commons.loadersImages('bundles/'),
+			commons.loadersSvg()
     ]
 	}
 }
