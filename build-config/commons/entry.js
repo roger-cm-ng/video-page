@@ -1,5 +1,5 @@
 module.exports = function() {
   return {
-    'entry-reload': './components/reload/entry-reload'
+    'entry-reload': ['babel-polyfill', './components/reload/entry-reload']
 	}
 }
