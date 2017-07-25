@@ -1,6 +1,6 @@
 import expect from 'expect';
 
-describe('<Reload> Actions', () => {
+describe('<DeleteMe> Reducers', () => {
   it('should be true', () => {
     expect(true).toBe(true);
   });
