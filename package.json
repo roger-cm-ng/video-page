@@ -4,18 +4,14 @@
   "description": "",
   "main": "./server/bin/www",
   "scripts": {
-    "webpack:dev": "webpack --config build-config/webpack.dev -d",
-    "webpack-demo": "webpack --config build-config/webpack.demo",
-    "webpack:demo": "npm-run-all --sequential test webpack-demo",
-    "webpack-qa": "webpack --config build-config/webpack.qa",
-    "webpack:qa": "npm-run-all --sequential test webpack-qa",
+    "webpack:dev": "npm run nodemon | webpack --config build-config/webpack.dev -d",
+    "webpack-production-local": "cross-env ASSET_CDN_PATH='http://localhost:4567/bundles/' webpack --config build-config/webpack.production",
     "webpack-production": "webpack --config build-config/webpack.production",
     "webpack:production": "npm-run-all --sequential test webpack-production",
     "test": "mocha --reporter spec test-config/test-setup.js \"components/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
     "start": "node ./server/bin/www",
-    "nodemon": "nodemon ./server/bin/www",
-    "heroku-postbuild": "if-env NODE_ENV=production && npm run webpack:production || npm run webpack:demo"
+    "nodemon": "nodemon ./server/bin/www"
   },
   "repository": {
     "type": "git",
@@ -29,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "3p-resource": "git+ssh://git@bitbucket.org/mathletics/3p-resource.git#1.0.0",
     "babel": "^6.5.1",
     "babel-cli": "^6.7.7",
     "babel-core": "^6.5.1",
