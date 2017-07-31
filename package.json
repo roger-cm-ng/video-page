@@ -11,6 +11,7 @@
     "test": "mocha --reporter spec test-config/test-setup.js \"components/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
     "start": "node ./server/bin/www",
+    "start-ws": "webpack-dev-server --port 2345",
     "nodemon": "nodemon ./server/bin/www"
   },
   "repository": {
@@ -76,6 +77,7 @@
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.4.2",
     "react-redux": "^4.4.0",
+    "react-router-dom": "^4.1.2",
     "react-styleable": "^2.2.3",
     "redux": "^3.3.1",
     "redux-thunk": "^2.1.0",
@@ -86,6 +88,7 @@
     "stylelint-webpack-plugin": "^0.7.0",
     "uglify-loader": "^1.3.0",
     "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.6.1",
     "whatwg-fetch": "^0.11.0"
   }
 }
