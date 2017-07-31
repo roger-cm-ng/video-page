@@ -1,5 +1,5 @@
-module.exports = function() {
+module.exports = function exports() {
   return {
 		contentBase: '../public'
-	}
-}
+	};
+};
