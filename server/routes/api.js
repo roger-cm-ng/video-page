@@ -1,7 +1,5 @@
 import express from 'express';
-import cors from 'cors';
 const Api = express.Router();
-Api.use(cors());
 
 Api.get('/content', (req, res) => {
   res.json({
