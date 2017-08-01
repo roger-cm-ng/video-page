@@ -1,7 +1,7 @@
-var path = require('path');
-var StyleLintPlugin = require('stylelint-webpack-plugin');
+const path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-module.exports = function() {
+module.exports = function exports() {
   return new StyleLintPlugin({
 		configFile: '.stylelintrc',
 		context: path.resolve('./components'),
@@ -9,5 +9,6 @@ module.exports = function() {
 		failOnError: false,
 		quiet: false,
 		exclude: /bootstrap\.scss/
-	})
-}
+	});
+};
+

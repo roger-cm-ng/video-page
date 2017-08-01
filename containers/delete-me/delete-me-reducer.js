@@ -1,4 +1,4 @@
-import { ACTIONED } from './reload-actions';
+import { ACTIONED } from './delete-me-actions';
 
 export default function (state = null, action) {
   switch (action.type) {

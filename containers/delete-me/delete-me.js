@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import styleable from 'react-styleable';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import '../../styles/core.scss';
-import css from './reload.scss';
-import { action } from './reload-actions';
+import css from './delete-me.scss';
+import { action } from './delete-me-actions';
 
 @styleable(css)
-class Reload extends Component {
+class DeleteMe extends Component {
+
   static propTypes= {
-    css: React.PropTypes.object,
-    action: React.PropTypes.func,
-    reloadReducer: React.PropTypes.object
+    options: PropTypes.object
   };
 
   componentWillUpdate() {}
@@ -19,15 +19,16 @@ class Reload extends Component {
   render() {
     return (
       <div className={css.component} >
-        <h1>Component</h1>
+        <h1>Please Delete Me, Let Me Go.</h1>
+        <p>{ this.props.options.hint }</p>
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ deleteMe }) {
   return {
-    reloadReducer: state.reloadReducer
+    deleteMe
 	};
 }
 
@@ -37,4 +38,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Reload);
+export default connect(mapStateToProps, mapDispatchToProps)(DeleteMe);

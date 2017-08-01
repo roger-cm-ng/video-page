@@ -1,5 +1,7 @@
-module.exports = function() {
+const path = require('path');
+
+module.exports = function exports() {
   return {
-		contentBase: '../public'
-	}
-}
+		contentBase: path.resolve('./public')
+	};
+};

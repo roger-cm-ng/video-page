@@ -4,15 +4,16 @@ import ReactDom from 'react-dom';
 import thunk from 'redux-thunk';
 import environment from '3p-resource';
 import { Provider } from 'react-redux';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
-import { handleDefaults } from '../helpers/utils';
-import ReloadCombinedReducers from './reload-combined-reducers';
-import Reload from './reload';
+import { handleDefaults } from '../../helpers/utils';
+import CombinedReducers from './combined-reducers';
+import DeleteMe from '../delete-me/delete-me';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
-export default class EntryReload {
+export default class EntryApp {
 	constructor(element, dynamicOptions) {
 		if (window.pppAppConfig) {
 			const config = window.pppAppConfig;
@@ -23,21 +24,23 @@ export default class EntryReload {
 		const defaults = {};
 		this.element = element;
 		this.options = handleDefaults(defaults, dynamicOptions);
-		this.renderElm();
+		this.renderElement();
 	}
 
-	renderElm() {
+	renderElement() {
 		const store = createStoreWithMiddleware(
-			ReloadCombinedReducers,
+			CombinedReducers,
 			window.devToolsExtension ? window.devToolsExtension() : f => f
 		);
 
 		ReactDom.render(
 			<Provider store={store}>
-				<Reload options={this.options} />
+				<Router>
+					<Route path="/" render={() => <DeleteMe options={this.options} />} />
+				</Router>
 			</Provider>,
 			document.querySelector(this.element));
 		}
 }
 
-window.EntryReload = EntryReload;
+window.EntryApp = EntryApp;

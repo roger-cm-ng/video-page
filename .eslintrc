@@ -2,29 +2,32 @@
   "plugins": ["jsx-a11y", "unicorn"],
   "extends": "airbnb",
   "rules": {
+    "unicorn/filename-case": ["error", {"case": "kebabCase"}],
+    "no-unused-vars": ["error", { "varsIgnorePattern": "coreStyles" }],
+    "comma-dangle": ["error", "never"],
+    "no-undef": 1,
+
     "jsx-a11y/img-uses-alt": 0,
     "jsx-a11y/redundant-alt": 0,
     "jsx-a11y/valid-aria-role": 0,
-    "comma-dangle": ["error", "never"],
+
+    "react/jsx-indent-props": [0, "tab"],
+    "react/jsx-indent": [0, "tab"],
+    "react/require-default-props": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-closing-bracket-location": 0,
+
     "indent": 0,
     "no-new": 0,
     "guard-for-in": 0,
     "no-param-reassign": 0,
     "react/sort-comp": 0,
     "max-len": 0,
-    "no-unused-vars": ["error", { "varsIgnorePattern": "coreStyles" }],
-    "react/jsx-indent-props": [0, "tab"],
-    "react/jsx-indent": [0, "tab"],
     "linebreak-style": 0,
     "react/jsx-filename-extension": 0,
-    "no-undef": 1,
     "no-restricted-syntax": 0,
     "no-tabs": 0,
-    "react/require-default-props": 0,
-    "react/forbid-prop-types": 0,
     "import/prefer-default-export": 0,
-    "unicorn/filename-case": ["error", {"case": "kebabCase"}],
-    "react/jsx-closing-bracket-location": 0
   },
   "parser": "babel-eslint"
 }
