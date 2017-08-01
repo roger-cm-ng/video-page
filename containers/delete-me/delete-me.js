@@ -9,9 +9,9 @@ import { action } from './delete-me-actions';
 
 @styleable(css)
 class DeleteMe extends Component {
+
   static propTypes= {
-    action: PropTypes.func,
-    deleteMeReducer: PropTypes.object
+    options: PropTypes.object
   };
 
   componentWillUpdate() {}
@@ -19,7 +19,8 @@ class DeleteMe extends Component {
   render() {
     return (
       <div className={css.component} >
-        <h1>Please do not Delete Me, Let Me Go.</h1>
+        <h1>Please Delete Me, Let Me Go.</h1>
+        <p>{ this.props.options.hint }</p>
       </div>
     );
   }
