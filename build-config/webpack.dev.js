@@ -26,9 +26,10 @@ module.exports = {
 			commons.loadersBabel(),
 			commons.loadersStyle(),
 			commons.loadersJson(),
-			commons.loadersImg(),
+			// commons.loadersImg(),
 			// commons.loadersImages('bundles/'),
-			commons.loadersSvg()
+			// commons.loadersSvg()
+			 commons.loadersImages2()
     ]
 	}
 };

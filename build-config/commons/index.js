@@ -12,3 +12,4 @@ exports.loadersImages = require('./loaders-images');
 exports.stylelintPlugin = require('./stylelint-plugin');
 exports.loadersSvg = require('./loaders-svg');
 exports.loadersImg = require('./loaders-img');
+exports.loadersImages2 = require('./loaders-images2');

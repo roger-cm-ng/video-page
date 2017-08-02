@@ -21,6 +21,7 @@ class DeleteMe extends Component {
       <div className={css.component} >
         <h1>Please Delete Me, Let Me Go.</h1>
         <p>{ this.props.options.hint }</p>
+        <img src="./images/background.js" />
       </div>
     );
   }
