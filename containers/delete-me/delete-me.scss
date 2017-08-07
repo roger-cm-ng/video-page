@@ -1,3 +1,32 @@
 .component {
 	display: block;
 }
+
+.img_container {
+	display: block;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 200px 30px;
+	width: 200px;
+}
+
+.flex_row {
+	display: flex;
+	flex-direction: row;
+}
+
+.pngCSS {
+	background-image: url('../../assets/images/rotating_flags.png');
+}
+
+.jpegCSS {
+	background-image: url('../../assets/images/cross.jpeg');
+}
+
+.jpgCSS {
+	background-image: url('../../assets/images/ausHeader.jpg');
+}
+
+.svgCSS {
+	background-image: url('../../assets/images/math-logo.svg');
+}

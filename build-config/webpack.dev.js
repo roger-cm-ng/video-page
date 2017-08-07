@@ -2,35 +2,35 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var commons = require('./commons');
 
 module.exports = {
-	resolve: commons.resolve(),
+    resolve: commons.resolve(),
 
-	context: commons.context(),
+    context: commons.context(),
 
-	entry: commons.entry(),
+    entry: commons.entry(),
 
-	output: commons.output(),
+    output: commons.output(),
 
-	watch: true,
+    watch: true,
 
-	plugins: [
-		commons.providePlugin(),
-		new ProgressBarPlugin(),
-		commons.stylelintPlugin()
-	],
+    plugins: [
+        commons.providePlugin(),
+        new ProgressBarPlugin(),
+        commons.stylelintPlugin()
+    ],
 
-	devServer: commons.devServer(),
+    devServer: commons.devServer(),
 
-	module: {
-		rules: [
-      commons.preloadersEslint(),
-			commons.loadersBabel(),
-			commons.loadersStyle(),
-			commons.loadersJson(),
-			// commons.loadersImg(),
-			// commons.loadersImages('bundles/'),
-			// commons.loadersSvg()
-			 commons.loadersImages2()
-    ]
-	}
+    module: {
+        rules: [
+            commons.preloadersEslint(),
+            commons.loadersBabel(),
+            commons.loadersStyle(),
+            commons.loadersJson(),
+            // commons.loadersImg(),
+            // commons.loadersImages('bundles/'),
+            // commons.loadersSvg()
+            commons.loadersImages2()
+        ]
+    }
 };
 
