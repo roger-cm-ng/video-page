@@ -40,9 +40,7 @@ module.exports = {
             commons.loadersBabel(),
             commons.loadersStyle(),
             commons.loadersJson(),
-            commons.loadersImg(),
-      // commons.loadersImages(process.env.ASSET_CDN_PATH),
-            commons.loadersSvg()
+            commons.loadersImages()
         ]
     }
 };
