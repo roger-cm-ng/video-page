@@ -10,23 +10,39 @@
 	width: 200px;
 }
 
-.flex_row {
+.flexRow {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+
+	img {
+		width: 150px;
+	}
+
+	div {
+		width: 150px;
+		height: 250px;
+		background-size: 150px auto;
+	}
 }
 
 .pngCSS {
-	background-image: url('../../assets/images/rotating_flags.png');
+	background-image: url('./images/rotating_flags.png');
 }
 
 .jpegCSS {
-	background-image: url('../../assets/images/cross.jpeg');
+	background-image: url('./images/cross.jpeg');
+}
+
+.gifCSS {
+	background-image: url('./images/404-guy.gif');
 }
 
 .jpgCSS {
-	background-image: url('../../assets/images/ausHeader.jpg');
+	background-image: url('./images/ausHeader.jpg');
 }
 
 .svgCSS {
-	background-image: url('../../assets/images/math-logo.svg');
+	background-image: url('./images/math-logo.svg');
 }
