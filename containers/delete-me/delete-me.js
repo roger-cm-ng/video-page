@@ -7,7 +7,9 @@ import '../../styles/core.scss';
 import css from './delete-me.scss';
 import { action } from './delete-me-actions';
 
-const pngSrc = require('./images/rotating_flags.png');
+import pngSrc from './images/rotating_flags.png';
+
+// const pngSrc = require('./images/rotating_flags.png');
 const jpegSrc = require('./images/cross.jpeg');
 const jpgSrc = require('./images/ausHeader.jpg');
 const svgSrc = require('./images/math-logo.svg');
