@@ -1,4 +1,4 @@
-import expect from 'expect'
+import expect from 'expect';
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import ReactTestUtils from 'react-dom/test-utils';
@@ -12,13 +12,13 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const store = createStoreWithMiddleware(Reducers);
 
 function setup() {
-  return mount(<Provider store={store}>
-    <DeleteMe />
-  </Provider>);
+    return mount(<Provider store={store}>
+        <DeleteMe />
+    </Provider>);
 }
 
 describe('<DeleteMe>', () => {
-  it('should have ', () => {
+    it('should have ', () => {
 
-  });
+    });
 });
