@@ -1,6 +1,6 @@
 {
-  "name": "reload",
-  "version": "1.0.0",
+  "name": "3p-react-boilerplate",
+  "version": "1.0.1",
   "description": "",
   "main": "./server/bin/www",
   "scripts": {
@@ -17,17 +17,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://git@bitbucket.org/mathletics/react-boilerplate.git"
   },
   "keywords": [
     "node",
-    "heroku",
-    "express"
+    "react",
+    "express",
+    "redux"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "3p-resource": "git+ssh://git@bitbucket.org/mathletics/3p-resource.git#1.0.0",
+    "3p-resource": "git+ssh://git@bitbucket.org/mathletics/3p-resource.git#develop",
     "babel-cli": "^6.7.7",
     "babel-core": "^6.5.1",
     "babel-eslint": "^6.0.3",
@@ -71,6 +72,8 @@
     "react-router-dom": "^4.1.2",
     "react-styleable": "^2.2.3",
     "redux": "^3.3.1",
+    "redux-actions": "^2.2.1",
+    "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
     "sass-loader": "^3.1.2",
     "serve-favicon": "~2.1.3",

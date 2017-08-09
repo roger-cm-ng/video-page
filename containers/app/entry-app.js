@@ -9,6 +9,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { handleDefaults } from '../../helpers/utils';
 import CombinedReducers from './combined-reducers';
 import DeleteMe from '../delete-me/delete-me';
+import '../../styles/core.scss';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);

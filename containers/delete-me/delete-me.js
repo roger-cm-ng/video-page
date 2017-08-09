@@ -3,7 +3,6 @@ import styleable from 'react-styleable';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import '../../styles/core.scss';
 import css from './delete-me.scss';
 import { action } from './delete-me-actions';
 
