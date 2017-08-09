@@ -1,7 +1,6 @@
 import React from 'react';
 import styleable from 'react-styleable';
 import PropTypes from 'prop-types';
-import '../../styles/core.scss';
 import css from './build-number.scss';
 
 const BuildNumber = ({ str = 'state less component' }) => (
