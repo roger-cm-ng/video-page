@@ -1,48 +1,48 @@
 .component {
-	display: block;
+    display: block;
 }
 
 .img_container {
-	display: block;
-	background-repeat: no-repeat;
-	background-position: left top;
-	background-size: 200px 30px;
-	width: 200px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 200px 30px;
+    width: 200px;
 }
 
 .flexRow {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
 
-	img {
-		width: 150px;
-	}
+    img {
+        width: 150px;
+    }
 
-	div {
-		width: 150px;
-		height: 250px;
-		background-size: 150px auto;
-	}
+    div {
+        width: 150px;
+        height: 250px;
+        background-size: 150px auto;
+    }
 }
 
 .pngCSS {
-	background-image: url('./images/rotating_flags.png');
+    background-image: url('./images/rotating_flags.png');
 }
 
 .jpegCSS {
-	background-image: url('./images/cross.jpeg');
+    background-image: url('./images/cross.jpeg');
 }
 
 .gifCSS {
-	background-image: url('./images/404-guy.gif');
+    background-image: url('./images/404-guy.gif');
 }
 
 .jpgCSS {
-	background-image: url('./images/ausHeader.jpg');
+    background-image: url('./images/ausHeader.jpg');
 }
 
 .svgCSS {
-	background-image: url('./images/math-logo.svg');
+    background-image: url('./images/math-logo.svg');
 }
