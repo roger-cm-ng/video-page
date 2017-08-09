@@ -5,13 +5,13 @@ import '../../styles/core.scss';
 import css from './build-number.scss';
 
 const BuildNumber = ({ str = 'state less component' }) => (
-  <div className={css.component}>
-		<h1>{str}</h1>
-  </div>
+    <div className={css.component}>
+        <h1>{str}</h1>
+    </div>
 );
 
 BuildNumber.propTypes = {
-	str: PropTypes.string
+    str: PropTypes.string
 };
 
 export default styleable(css)(BuildNumber);
