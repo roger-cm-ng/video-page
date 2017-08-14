@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import routes from './routes/index';
 import api from './routes/api';
 const app = express();
@@ -16,6 +17,7 @@ app.use(logger('dev'));
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(cors()); // Use CORS to allow iPad testing when iframed (e.g. Teacher modules)
 
 app.use('/', routes);
 app.use('/api', api);
