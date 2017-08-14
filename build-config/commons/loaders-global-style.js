@@ -1,19 +1,19 @@
 module.exports = function exports() {
   return {
     test: /\.(scss)$/,
-    exclude: /(node_modules|styles)/,
+    include: /styles/,
     loaders: [
         {
             loader: 'style-loader'
         },
         {
-            loader: 'css-loader?modules&localIdentName=[local]---[hash:base64:5]'
+            loader: 'css-loader?modules=false'
         },
         {
             loader: 'postcss-loader'
         },
         {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
         }
     ]
   };
