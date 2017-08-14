@@ -2,4 +2,19 @@
 @import 'variables';
 @import 'normalise';
 @import 'reset';
-@import 'bootstrap';
+@import '~sass-flex-mixin/flex';
+
+/*
+// Enable use bootstrap
+// > npm i bootstrap-sass --save
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/theme';
+*/
+
+/*
+// Enable use fontawesome
+// > npm i font-awesome-sass --save
+$fa-font-path: "~font-awesome-sass/assets/fonts/font-awesome/";
+@import "~font-awesome-sass/assets/stylesheets/font-awesome";
+*/
