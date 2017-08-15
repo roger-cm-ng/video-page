@@ -1,6 +1,7 @@
-module.exports = function () {
+module.exports = function (fontPaths) {
     return {
         test: /\.(gif|png|jpe?g|svg)$/i,
+        exclude: fontPaths,
         loaders: [
             {
                 loader: 'file-loader',
@@ -18,7 +19,7 @@ module.exports = function () {
                         quality: 65
                     },
                     gifsicle: {
-                        interlaced: false
+                        interlaced: true
                     },
                     optipng: {
                         optimizationLevel: 7
