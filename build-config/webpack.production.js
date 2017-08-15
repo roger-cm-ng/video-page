@@ -38,9 +38,11 @@ module.exports = {
         rules: [
             commons.preloadersEslint(),
             commons.loadersBabel(),
+            commons.loadersGlobalStyle(),
             commons.loadersStyle(),
-            commons.loadersJson(),
-            commons.loadersImages()
+            commons.loadersFonts(),
+            commons.loadersImages(),
+            commons.loadersJson()
         ]
     }
 };

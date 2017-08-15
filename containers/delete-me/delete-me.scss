@@ -10,7 +10,7 @@
     width: 200px;
 }
 
-.flexRow {
+.flex-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -27,22 +27,32 @@
     }
 }
 
-.pngCSS {
+.delete-view-font {
+    font-size: 20px;
+    color: green;
+
+    button {
+        min-width: 50px;
+        min-height: 50px;
+    }
+}
+
+.png-css {
     background-image: url('./images/rotating_flags.png');
 }
 
-.jpegCSS {
+.jpeg-css {
     background-image: url('./images/cross.jpeg');
 }
 
-.gifCSS {
+.gif-css {
     background-image: url('./images/404-guy.gif');
 }
 
-.jpgCSS {
+.jpg-css {
     background-image: url('./images/ausHeader.jpg');
 }
 
-.svgCSS {
+.svg-css {
     background-image: url('./images/math-logo.svg');
 }

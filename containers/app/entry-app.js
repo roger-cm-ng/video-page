@@ -6,10 +6,10 @@ import environment from '3p-resource';
 import { Provider } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
+import '../../styles/core.scss';
 import { handleDefaults } from '../../helpers/utils';
 import CombinedReducers from './combined-reducers';
 import DeleteMe from '../delete-me/delete-me';
-import '../../styles/core.scss';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
