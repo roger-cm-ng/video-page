@@ -19,7 +19,7 @@ module.exports = function (fontPaths) {
                         quality: 65
                     },
                     gifsicle: {
-                        interlaced: true
+                        interlaced: false
                     },
                     optipng: {
                         optimizationLevel: 7
