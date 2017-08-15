@@ -1,6 +1,10 @@
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const commons = require('./commons');
 const webpack = require('webpack');
+var fontPaths = [
+    path.resolve('node_modules/bootstrap-sass/assets/fonts'),
+    path.resolve('node_modules/font-awesome-sass/assets/fonts')
+];
 
 if (!process.env.ASSET_CDN_PATH) {
     throw new Error('No asset CDN path specified. Did you forget to define it?' +
@@ -40,8 +44,8 @@ module.exports = {
             commons.loadersBabel(),
             commons.loadersGlobalStyle(),
             commons.loadersStyle(),
-            commons.loadersFonts(),
-            commons.loadersImages(),
+            commons.loadersFonts(fontPaths),
+            commons.loadersImages(fontPaths),
             commons.loadersJson()
         ]
     }
