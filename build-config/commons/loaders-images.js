@@ -6,6 +6,7 @@ module.exports = function () {
                 loader: 'file-loader',
                 options: {
                     name: '[hash].[ext]',
+                    outputPath: 'images/',
                     publicPath: 'bundles/'
                 }
             },

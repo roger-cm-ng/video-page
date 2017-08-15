@@ -9,6 +9,7 @@ module.exports = function () {
                 loader: 'file-loader',
                 options: {
                     name: '[hash].[ext]',
+                    outputPath: 'fonts/',
                     publicPath: 'bundles/'
                 }
             }
