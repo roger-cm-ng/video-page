@@ -33,13 +33,6 @@ class DeleteMe extends Component {
             <div className={css.component}>
                 <h1>Please Delete Me, Let Me Go.</h1>
                 <p>{this.props.options.hint}</p>
-                <h2>Test: Bootstrap and fontawesome, hint: enable libs under styles/core.scss</h2>
-                <div className={css['delete-view-font']}>
-                    <button><i className="fa fa-bath" aria-hidden="true" />fontawesome icon</button>
-                    <button><i className="glyphicon glyphicon-trash" />glyphicon icon</button>
-                </div>
-
-
                 <h2>Test: {'<img src={import...from...}>'}</h2>
                 <div className={css['flex-row']}>
                     <img alt="" src={pngSrc} />
