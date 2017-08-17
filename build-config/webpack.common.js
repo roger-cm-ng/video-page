@@ -14,12 +14,8 @@ module.exports = {
         commons.providePlugin(),
         new ProgressBarPlugin(),
         commons.stylelintPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: function(module) {
-                return module.resource && /node_modules/.test(module.resource);
-            }
-        })
+        commons.commonCodeChunks(),
+        commons.htmlWebpackPlugin()
     ],
 
     devServer: commons.devServer(),

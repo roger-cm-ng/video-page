@@ -7,7 +7,7 @@ module.exports = function () {
                 options: {
                     name: '[hash].[ext]',
                     outputPath: 'images/',
-                    publicPath: 'bundles/'
+                    publicPath: process.env.ASSET_CDN_PATH ? process.env.ASSET_CDN_PATH : ''
                 }
             },
             {
