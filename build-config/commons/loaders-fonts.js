@@ -10,7 +10,7 @@ module.exports = function () {
                 options: {
                     name: '[hash].[ext]',
                     outputPath: 'fonts/',
-                    publicPath: 'bundles/'
+                    publicPath: process.env.ASSET_CDN_PATH ? process.env.ASSET_CDN_PATH : ''
                 }
             }
         ]
