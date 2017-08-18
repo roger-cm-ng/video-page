@@ -26,8 +26,9 @@ module.exports = webpackMerge(CommonConfig, {
                 warnings: false
             },
             sourceMap: true
+        }),
+        new webpack.SourceMapDevToolPlugin({
+            filename: './sourcemaps/[name].[hash].js.map'
         })
-    ],
-
-    devtool: 'source-map'
+    ]
 });
