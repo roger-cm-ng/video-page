@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import thunk from 'redux-thunk';
+import reduxPromise from 'redux-promise';
 import environment from '3p-resource';
 import { Provider } from 'react-redux';
 import { HashRouter as Router, Route } from 'react-router-dom';
@@ -12,7 +13,7 @@ import CombinedReducers from './combined-reducers';
 import DeleteMe from '../delete-me/delete-me';
 
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunk, reduxPromise)(createStore);
 
 export default class EntryApp {
     constructor(element, dynamicOptions) {
