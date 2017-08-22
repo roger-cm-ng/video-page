@@ -6,7 +6,7 @@ module.exports = function () {
                 loader: 'file-loader',
                 options: {
                     name: '[hash].[ext]',
-                    outputPath: 'images/',
+                    outputPath: 'assets/images/',
                     publicPath: process.env.ASSET_CDN_PATH ? process.env.ASSET_CDN_PATH : ''
                 }
             },

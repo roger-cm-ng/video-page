@@ -9,7 +9,7 @@ module.exports = function () {
                 loader: 'file-loader',
                 options: {
                     name: '[hash].[ext]',
-                    outputPath: 'fonts/',
+                    outputPath: 'assets/fonts/',
                     publicPath: process.env.ASSET_CDN_PATH ? process.env.ASSET_CDN_PATH : ''
                 }
             }
