@@ -17,11 +17,9 @@ const MOCK_SERVICES_URL = `http://${MOCK_SERVICES_HOST}:${MOCK_SERVICES_PORT}`;
 // the Avatar Admin application's resources.  Replace that with the resource(s) your application uses.
 
 const COMMON_CONFIG = {
-    AvatarAdminBaseUrl: `${MOCK_SERVICES_URL}/avatar/v1`, // TODO: REPLACE THIS WITH YOUR ACTUAL SERVICES
-    BaseName: ''
+    BaseName: '',
+    AvatarAdminBaseUrl: `${MOCK_SERVICES_URL}/avatar/v1` // TODO: REPLACE THIS WITH YOUR ACTUAL SERVICES
 };
-
-// Update the authentication to use the specified
 
 export default {
     local: {

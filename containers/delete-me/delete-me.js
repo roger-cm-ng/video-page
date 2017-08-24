@@ -23,15 +23,19 @@ class DeleteMe extends Component {
     componentWillUpdate() {
     }
 
-    render() {
-        this.getAlbum = this.getAlbum.bind(this);
+    constructor(props) {
+        super(props);
 
+        this.getFirstAlbum = this.getFirstAlbum.bind(this);
+    }
+
+    render() {
         let albumDiv;
 
         if (this.props.albumTitle) {
             albumDiv = <div><b>Album title is:</b> {this.props.albumTitle}</div>;
         } else {
-            albumDiv = <div><button onClick={this.getAlbum}>Get Album</button></div>;
+            albumDiv = <div><button onClick={this.getFirstAlbum}>Get Album</button></div>;
         }
 
         const pngBG = `${css.img_container} ${css['png-css']}`;
@@ -65,13 +69,10 @@ class DeleteMe extends Component {
         );
     }
 
-    getAlbum() {
-        console.log('DeleteMe.getAlbum() - calling this.props.getAlbum()');
+    getFirstAlbum() {
         this.props.getAlbum({ id: 1 });
     }
 }
-
-
 
 function mapStateToProps(state) {
     return {

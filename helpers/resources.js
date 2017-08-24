@@ -38,7 +38,8 @@ class Resources {
 
         Resources.albums = env.resource('Albums')
             .baseUrl('http://jsonplaceholder.typicode.com')
-            .service('albums');
+            .service('albums')
+            .profile();
     }
 
 
