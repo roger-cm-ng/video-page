@@ -8,15 +8,15 @@ import api from './routes/api';
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, '../assets'));
-app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, '..', 'public/favicon.ico')));
 app.use(logger('dev'));
 
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public/bundles')));
 app.use(cors()); // Use CORS to allow iPad testing when iframed (e.g. Teacher modules)
 
 app.use('/', routes);
