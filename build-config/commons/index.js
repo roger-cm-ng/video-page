@@ -1,4 +1,6 @@
+exports.commonCodeChunks = require('./common-code-chunks');
 exports.entry = require('./entry');
+exports.htmlWebpackPlugin = require('./html-webpack-plugin');
 exports.context = require('./context');
 exports.resolve = require('./resolve');
 exports.providePlugin = require('./provide-plugin');
