@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, browserHistory as history } from 'react-router-dom';
+import { BrowserRouter as Router, Route, browserHistory as history, Switch } from 'react-router-dom';
 
 import BasicApp from './basic-app';
 import DeleteMe from '../delete-me/delete-me';
@@ -28,7 +28,10 @@ export default class EntryApp extends BasicApp {
         return (
             <Provider store={store}>
                 <Router history={history} basename={BASE_NAME}>
-                    <Route exact path="/" render={() => <DeleteMe options={this.options} />} />
+                    <Switch>
+                        <Route exact path="/" render={() => <h1>Whoo hoo!</h1>} />
+                        <Route exact path="/delete-me" render={() => <DeleteMe options={this.options} />} />
+                    </Switch>
                 </Router>
             </Provider>
         );
