@@ -24,10 +24,33 @@ app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-    const err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+    logMissingRouteMessage(req.url);
+
+    // const err = new Error('Not Found');
+    // err.status = 404;
+    // next(err);
+
+    function logMissingRouteMessage(url) {
+        let text = `WARNING - The route ${url} does not exist`;
+        let length = text.length;
+        let asterisks = repeatString('*', length + 4);
+        let blankLine = `* ${repeatString(' ', length)} *`;
+        let message = `${asterisks}\n${blankLine}\n* ${text} *\n${blankLine}\n${asterisks}`;
+
+        console.error(message);
+    }
+
+    function repeatString(s, n) {
+        let repeated = '';
+
+        while (repeated.length < n) {
+            repeated += s;
+        }
+
+        return repeated;
+    }
 });
+
 
 // error handlers
 
