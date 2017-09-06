@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, browserHistory as history, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, hashHistory as history, Switch } from 'react-router-dom';
 
 import BasicApp from './basic-app';
 import DeleteMe from '../delete-me/delete-me';
@@ -11,6 +11,7 @@ import DeleteMe from '../delete-me/delete-me';
 export default class EntryApp extends BasicApp {
     render(store) {
         // TODO: DEFINE THE TOP-LEVEL ROUTES FOR YOUR APPLICATION'S COMPONENTS HERE
+        Raven.captureMessage('Initialised');
 
         // When executing on demo, QA, or production, the host app will inject a property
         // called pppAppConfig into the global window variable.  This will provide the

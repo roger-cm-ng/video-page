@@ -29,6 +29,10 @@ class DeleteMe extends Component {
         this.getFirstAlbum = this.getFirstAlbum.bind(this);
     }
 
+    generateError() {
+        this.doesntExist.run();
+    }
+
     render() {
         let albumDiv;
 
@@ -47,6 +51,7 @@ class DeleteMe extends Component {
         return (
             <div className={css.component}>
                 <h1>Please Delete Me, Let Me Go.</h1>
+                <input type="button" onClick={this.generateError} value="Generate Error" />
                 <p>{this.props.options.hint}</p>
                 <h2>Test: {'<img src={import...from...}>'}</h2>
                 <div className={css['flex-row']}>
