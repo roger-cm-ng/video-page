@@ -1,11 +1,14 @@
-import { ACTIONED } from './delete-me-actions';
+import { GET_ALBUM } from './delete-me-actions';
 
-export default function (state = null, action) {
-  switch (action.type) {
-    case ACTIONED:
-      return action.payload;
-		default:
-	}
+const INITIAL_STATE = { albumTitle: undefined };
 
-  return state;
+export default function (state = INITIAL_STATE, action) {
+    switch (action.type) {
+    case GET_ALBUM:
+        return { ...state, albumTitle: action.payload.data.title };
+
+    default:
+    }
+
+    return state;
 }

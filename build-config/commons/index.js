@@ -1,12 +1,15 @@
+exports.commonCodeChunks = require('./common-code-chunks');
 exports.entry = require('./entry');
+exports.htmlWebpackPlugin = require('./html-webpack-plugin');
 exports.context = require('./context');
 exports.resolve = require('./resolve');
-exports.output = require('./output');
 exports.providePlugin = require('./provide-plugin');
 exports.devServer = require('./dev-server');
 exports.preloadersEslint = require('./preloaders-eslint');
 exports.loadersBabel = require('./loaders-babel');
+exports.loadersGlobalStyle = require('./loaders-global-style');
 exports.loadersStyle = require('./loaders-style');
 exports.loadersJson = require('./loaders-json');
 exports.stylelintPlugin = require('./stylelint-plugin');
 exports.loadersImages = require('./loaders-images');
+exports.loadersFonts = require('./loaders-fonts');

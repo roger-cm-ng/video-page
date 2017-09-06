@@ -1,46 +1,41 @@
-/* global window document */
+/* global window */
+
 import React from 'react';
-import ReactDom from 'react-dom';
-import thunk from 'redux-thunk';
-import environment from '3p-resource';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
-import { handleDefaults } from '../../helpers/utils';
-import CombinedReducers from './combined-reducers';
+import { BrowserRouter as Router, Route, browserHistory as history, Switch } from 'react-router-dom';
+
+import BasicApp from './basic-app';
 import DeleteMe from '../delete-me/delete-me';
 
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+export default class EntryApp extends BasicApp {
+    render(store) {
+        // TODO: DEFINE THE TOP-LEVEL ROUTES FOR YOUR APPLICATION'S COMPONENTS HERE
 
-export default class EntryApp {
-	constructor(element, dynamicOptions) {
-		if (window.pppAppConfig) {
-			const config = window.pppAppConfig;
-			environment(config.env || 'live')
-				.setConfiguration(config);
-		}
+        // When executing on demo, QA, or production, the host app will inject a property
+        // called pppAppConfig into the global window variable.  This will provide the
+        // base name of the app.  Most of the time that will be an empty string, but in
+        // case it is not, we will extract it and pass it to the router, below.
 
-		const defaults = {};
-		this.element = element;
-		this.options = handleDefaults(defaults, dynamicOptions);
-		this.renderElement();
-	}
+        const appConfig = window.pppAppConfig;
+        const BASE_NAME = appConfig ? appConfig.BaseName : '';
 
-	renderElement() {
-		const store = createStoreWithMiddleware(
-			CombinedReducers,
-			window.devToolsExtension ? window.devToolsExtension() : f => f
-		);
 
-		ReactDom.render(
-			<Provider store={store}>
-				<Router>
-					<Route path="/" render={() => <DeleteMe options={this.options} />} />
-				</Router>
-			</Provider>,
-			document.querySelector(this.element));
-		}
+        // NOTE: We have used a "render" attribute, rather than "component" to specify what
+        //       should be rendered.  This allows us to pass options to the component. You
+        //       can obviously simplify things if your components don't need any.
+
+        return (
+            <Provider store={store}>
+                <Router history={history} basename={BASE_NAME}>
+                    <Switch>
+                        <Route exact path="/" render={() => <h1>Whoo hoo!</h1>} />
+                        <Route exact path="/delete-me" render={() => <DeleteMe options={this.options} />} />
+                    </Switch>
+                </Router>
+            </Provider>
+        );
+    }
 }
 
 window.EntryApp = EntryApp;

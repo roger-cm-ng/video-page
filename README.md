@@ -37,3 +37,10 @@ Naming convention for component
 Please use kebab-case, the class, action and reducer names will be generated in corresponding pascal and camel names
 
 DO NOT USE pascal-case or camel-case to name your component
+
+Enabling Bootstrap or Fontawesome
+=================================
+
+Please refer to styles/core.scss
+
+
