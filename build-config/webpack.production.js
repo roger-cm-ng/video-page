@@ -12,7 +12,8 @@ if (!process.env.ASSET_CDN_PATH) {
 module.exports = webpackMerge(CommonConfig, {
     output: {
         path: path.resolve('public/bundles'),
-        filename: '[name].[hash].js'
+        filename: '[name].[hash].js',
+        publicPath: process.env.ASSET_CDN_PATH
     },
 
     plugins: [
