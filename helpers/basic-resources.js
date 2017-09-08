@@ -2,10 +2,11 @@
 
 import environment from '3p-resource';
 import localConfig from './local-resource-config';
+import appName from '../containers/app/app-name';
 
 class BasicResources {
     static initialise(envName, credentials) {
-        const env = environment(envName);
+        const env = environment(envName, appName);
         const location = window.location;
         const runningOnDeveloperMachine = /^https?:\/\/localhost/.test(location);
 
@@ -15,15 +16,12 @@ class BasicResources {
                 // which does not require authentication.
 
                 env.bypassAuthentication();
+                env.setConfiguration(localConfig);
             } else if (credentials.authToken) {
                 env.authToken = credentials.authToken;
             } else {
                 env.setCredentials(credentials.username, credentials.password);
             }
-
-            // Set the configuration from our static definitions.
-
-            env.setConfiguration(localConfig[envName]);
         } else if (credentials.authToken) {
             env.authToken = credentials.authToken;
         } else if (credentials.username && credentials.password) {
