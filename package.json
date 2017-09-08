@@ -28,7 +28,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "3p-resource": "git+ssh://git@bitbucket.org/mathletics/3p-resource.git#1.1.0",
+    "3p-resource": "git+ssh://git@bitbucket.org/mathletics/3p-resource.git#1.1.1",
     "babel-cli": "^6.7.7",
     "babel-core": "^6.5.1",
     "babel-eslint": "^7.2.3",
