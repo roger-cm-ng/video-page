@@ -101,6 +101,13 @@ export default class BasicApp {
         const envName = config.env || 'live';
         const credentials = BasicApp.getCredentials(params);
 
+        if (!config.BaseName) {
+            console.log('BasicApp.configureForRemoteHost() - your pppAppConfig does not' +
+                        ' include a BaseName item; we will assume it should be blank.');
+
+            config.BaseName = '';
+        }
+
         if (BasicApp.weHaveUsableCredentials(credentials)) {
             Resources.initialise(envName, credentials);
         }
