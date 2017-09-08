@@ -3,6 +3,8 @@
 // You should be able to use this code as is, apart from perhaps changing MOCK_SERVICE_PORT to whatever
 // port you're using for your mock server.
 
+import basicLocalResourceConfig from './basic-local-resource-config';
+
 const MOCK_SERVICES_PORT = 4321; // TODO: DEFINE THE PORT YOUR MOCK SERVER IS LISTENING ON
 
 const MOCK_SERVICES_HOST = 'localhost';
@@ -21,24 +23,6 @@ const COMMON_CONFIG = {
     AvatarAdminBaseUrl: `${MOCK_SERVICES_URL}/avatar/v1` // TODO: REPLACE THIS WITH YOUR ACTUAL SERVICES
 };
 
-export default {
-    local: {
-        ...COMMON_CONFIG
-    },
+const localConfig = basicLocalResourceConfig(COMMON_CONFIG);
 
-    live: {
-        ...COMMON_CONFIG,
-        'Shared.AuthenticationServicePathUrl': 'http://mzaue2.phoenix.mathletics.com/AuthenticationService-R170/'
-    },
-
-    qa: {
-        ...COMMON_CONFIG,
-        'Shared.AuthenticationServicePathUrl': 'http://qa.phoenix.mathletics.com/AuthenticationService-R170/'
-    },
-
-    demo: {
-        ...COMMON_CONFIG,
-        'Shared.AuthenticationServicePathUrl': 'http://demo.3plearning.com/AuthenticationService/'
-    }
-};
-
+export default localConfig;

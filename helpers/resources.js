@@ -38,8 +38,8 @@ class Resources {
     // access to everything, in particular the authToken if one was
     // passed in the query parameters.
 
-    static initialise(envName, username, password) {
-        Resources.env = BasicResources.initialise(envName, username, password);
+    static initialise(envName, credentials) {
+        Resources.env = BasicResources.initialise(envName, credentials);
 
         Resources.createResources();
 

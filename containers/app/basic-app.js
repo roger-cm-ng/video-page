@@ -1,4 +1,6 @@
 /* global window document */
+/* eslint-disable no-console */
+
 import React from 'react';
 import ReactDom from 'react-dom';
 import thunk from 'redux-thunk';
@@ -9,6 +11,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { handleDefaults } from '../../helpers/utils';
 import CombinedReducers from './combined-reducers';
 import Resources from '../../helpers/resources';
+
 
 const createStoreWithMiddleware = applyMiddleware(thunk, reduxPromise)(createStore);
 
@@ -24,7 +27,7 @@ export default class BasicApp {
     }
 
     render() {
-        return <h1>You should define a render() method for your subclass</h1>;
+        return <h1>You should define a render() method for your subclass of BasicApp</h1>;
     }
 
 
@@ -44,137 +47,102 @@ export default class BasicApp {
 
     static configure() {
         // How we want to configure things depends on where this app is running,
-        // and where the services we want to access live, and whether we want to
-        // mock things.
+        // and where the services we want to access live.
         //
-        // 1. When running on a developer's machine, using a mock server
-        //    we want to use a hard-coded config from
+        // 1. When running on a developer's machine, using a mock server we want
+        //    to use a hard-coded config from
         //
         //       helpers/local-resource-config.js
         //
-        // 2. When running on a developer's machine, but we want to use services
-        //    on demo, QA or live, we want to get the configuration from the
-        //    configuration of the host app.
+        // 2. When running on a developer's machine, but we want to use back-end
+        //    services on demo, QA or live, we want to get the configuration from
+        //    the configuration of the host app.
         //
         // 3. When running on demo, QA or live, the configuration will be injected
-        //    based on the host app's configuration, augmented by query parameters.
+        //    based on the host app's configuration, but can be overridden by query
+        //    parameters.
         //
-        // We determine which situation we have by looking at the query parameters
-        // and whether there is a pppAppConfig property on the window object.
+        // We determine which situation we have by looking at the window location
+        // URL and the query parameters, and whether there is a pppAppConfig property
+        // on the window object.
 
         const location = window.location;
+        const runningOnDeveloperMachine = /^https?:\/\/localhost/.test(location);
         const queryParams = location.search;
         const query = queryParams.replace('?', '');
         const params = queryString.parse(query);
 
-        if (/^http:\/\/localhost/.test(location)) {
-            // We are running on a developer's machine
-
+        if (runningOnDeveloperMachine) {
             BasicApp.configureForDeveloperMachine(params);
         } else {
             BasicApp.configureForRemoteHost(params);
         }
-
-        const config = window.pppAppConfig;
-
-        if (config) {
-            BasicApp.configureUsingAppConfig(config);
-        } else {
-            BasicApp.configureUsingQueryParams(params);
-        }
     }
 
     static configureForDeveloperMachine(params) {
-        const username = params.username;
-        const password = params.password;
+        let envName = params.env;
 
-        const envName = params.env || 'live';
+        if (!envName) {
+            console.log('BasicApp.configureForDeveloperMachine() - you did not provide an "env" query' +
+                            ' parameter, so I am assuming you want to talk to live.');
 
-        const env = Resources.initialise(envName, username, password);
+            envName = 'live';
+        }
 
-        env.authToken = undefined;
+        const credentials = BasicApp.getCredentials(params);
 
-        /* eslint-disable no-console */
-        if (username && password) {
-            console.log(`EntryApp.configureUsingQueryParams() - username = '${username}' password = '${password}'`);
-
-            BasicApp.setCredentials(env, params);
-        } else if (env.needsAuthentication) {
-            console.log('EntryApp.configureUsingQueryParams() - the query parameters do not include a username' +
-                ' and a password.  Perhaps you forgot to pass them in the URL? Alternatively, your application' +
-                ' can call Environment.gatherCredentialsWith() somewhere, passing a function that can be used to' +
-                ' request the username/password.');
+        if (envName === 'local' || BasicApp.weHaveUsableCredentials(credentials)) {
+            Resources.initialise(envName, credentials);
         }
     }
 
     static configureForRemoteHost(params) {
         const config = window.pppAppConfig;
         const envName = config.env || 'live';
+        const credentials = BasicApp.getCredentials(params);
 
-        const env = Resources.initialise(envName);
-
-        env.authToken = config.authToken;
-    }
-
-    static getParameter(name, params, config) {
-        // Extract the specified parameter from either
-        // the query parameters, or the config, with
-        // the former taking precedence.
-
-        let value = params[name];
-
-        if (value === undefined && config) {
-            value = config[name];
-        }
-
-        return value;
-    }
-
-    static configureUsingAppConfig(config) {
-        const envName = config.env || 'live';
-        const env = Resources.initialise(envName);
-
-        env.authToken = config.authToken;
-    }
-
-    static configureUsingQueryParams(params) {
-        const username = params.username;
-        const password = params.password;
-
-        const envName = params.env || 'live';
-
-        const env = Resources.initialise(envName, username, password);
-
-        env.authToken = undefined;
-
-        /* eslint-disable no-console */
-        if (username && password) {
-            console.log(`EntryApp.configureUsingQueryParams() - username = '${username}' password = '${password}'`);
-
-            BasicApp.setCredentials(env, params);
-        } else if (env.needsAuthentication) {
-            console.log('EntryApp.configureUsingQueryParams() - the query parameters do not include a username' +
-                ' and a password.  Perhaps you forgot to pass them in the URL? Alternatively, your application' +
-                ' can call Environment.gatherCredentialsWith() somewhere, passing a function that can be used to' +
-                ' request the username/password.');
+        if (BasicApp.weHaveUsableCredentials(credentials)) {
+            Resources.initialise(envName, credentials);
         }
     }
 
-    static setCredentials(env, params) {
-        // We don't have an authentication token.  Hopefully, we have a username and password,
-        // which can be used to get one when required.
+    static getCredentials(params) {
+        const credentials = {};
+        const config = window.pppAppConfig;
+        const items = ['authToken', 'username', 'password'];
 
-        const username = params.username;
-        const password = params.password;
+        for (const item of items) {
+            let value = params[item];
 
-        if (username && password) {
-            env.setCredentials(username, password);
-        } else {
-            /* eslint: disable-next-line */
-            console.warn('EntryApp.constructor() - neither an authToken nor a username/password pair were' +
-                ' provided. So, the 3p-resource library will be unable to access resources' +
-                ' unless you are calling Environment.bypassAuthentication() somewhere else.');
+            if (value === undefined) {
+                if (config) {
+                    value = config[item];
+                }
+            }
+
+            credentials[item] = value;
         }
+
+        return credentials;
+    }
+
+    static weHaveUsableCredentials(credentials) {
+        let usableCredentials = false;
+
+        if (credentials.authToken) {
+            usableCredentials = true;
+        } else if (credentials.username && credentials.password) {
+            usableCredentials = true;
+        }
+
+        if (!usableCredentials) {
+            console.error('EntryApp.configureForDeveloperMachine() - to execute, we need either an authToken or' +
+                ' a username/password pair.  After combining data from window.pppAppConfig and the query' +
+                ' parameters, I still do not have what I need. The app will probably not function correctly if' +
+                ' it requires any 3P resources.');
+        }
+
+        return usableCredentials;
     }
 
     static installHistoryHandler() {
