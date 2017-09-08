@@ -20,6 +20,7 @@ const MOCK_SERVICES_URL = `http://${MOCK_SERVICES_HOST}:${MOCK_SERVICES_PORT}`;
 
 const COMMON_CONFIG = {
     BaseName: '',
+    HostApp: 'ReactBoilerplate',
     AvatarAdminBaseUrl: `${MOCK_SERVICES_URL}/avatar/v1` // TODO: REPLACE THIS WITH YOUR ACTUAL SERVICES
 };
 
