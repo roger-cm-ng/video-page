@@ -30,6 +30,7 @@ class DeleteMe extends Component {
     }
 
     generateError() {
+        console.log('forced line change');
         this.doesntExist.run();
     }
 

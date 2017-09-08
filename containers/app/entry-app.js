@@ -11,7 +11,6 @@ import DeleteMe from '../delete-me/delete-me';
 export default class EntryApp extends BasicApp {
     render(store) {
         // TODO: DEFINE THE TOP-LEVEL ROUTES FOR YOUR APPLICATION'S COMPONENTS HERE
-        Raven.captureMessage('Initialised');
 
         // When executing on demo, QA, or production, the host app will inject a property
         // called pppAppConfig into the global window variable.  This will provide the
