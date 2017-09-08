@@ -21,7 +21,7 @@ class Resources {
     static createResources() {
         const env = Resources.env;
 
-        // TODO: ADD STATIC PROPERTIES FOR EACH OF YOUR RESOURCES
+        // TODO: 5. ADD STATIC PROPERTIES FOR EACH OF YOUR RESOURCES
         //
         // You should replace this placeholder resource with the ones you
         // actually need in your application.
