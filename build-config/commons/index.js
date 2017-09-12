@@ -1,7 +1,8 @@
+exports.commonCodeChunks = require('./common-code-chunks');
 exports.entry = require('./entry');
+exports.htmlWebpackPlugin = require('./html-webpack-plugin');
 exports.context = require('./context');
 exports.resolve = require('./resolve');
-exports.output = require('./output');
 exports.providePlugin = require('./provide-plugin');
 exports.devServer = require('./dev-server');
 exports.preloadersEslint = require('./preloaders-eslint');

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import css from './delete-me.scss';
-import { action } from './delete-me-actions';
+import { getAlbum } from './delete-me-actions';
 
 import pngSrc from './images/rotating_flags.png';
 import jpegSrc from './images/cross.jpeg';
@@ -14,15 +14,30 @@ import gifSrc from './images/404-guy.gif';
 
 @styleable(css)
 class DeleteMe extends Component {
-
     static propTypes = {
-        options: PropTypes.object
+        options: PropTypes.object,
+        getAlbum: PropTypes.func,
+        albumTitle: PropTypes.string
     };
 
     componentWillUpdate() {
     }
 
+    constructor(props) {
+        super(props);
+
+        this.getFirstAlbum = this.getFirstAlbum.bind(this);
+    }
+
     render() {
+        let albumDiv;
+
+        if (this.props.albumTitle) {
+            albumDiv = <div><b>Album title is:</b> {this.props.albumTitle}</div>;
+        } else {
+            albumDiv = <div><button onClick={this.getFirstAlbum}>Get Album</button></div>;
+        }
+
         const pngBG = `${css.img_container} ${css['png-css']}`;
         const jpegBG = `${css.img_container} ${css['jpeg-css']}`;
         const jpgBG = `${css.img_container} ${css['jpg-css']}`;
@@ -49,20 +64,25 @@ class DeleteMe extends Component {
                     <div className={svgBG} />
                     <div className={gifBG} />
                 </div>
+                {albumDiv}
             </div>
         );
     }
+
+    getFirstAlbum() {
+        this.props.getAlbum({ id: 1 });
+    }
 }
 
-function mapStateToProps({ deleteMe }) {
+function mapStateToProps(state) {
     return {
-        deleteMe
+        albumTitle: state.deleteMe.albumTitle
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        action
+        getAlbum
     }, dispatch);
 }
 

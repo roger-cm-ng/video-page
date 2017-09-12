@@ -1,24 +1,25 @@
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const commons = require('./commons');
 const webpack = require('webpack');
-var fontPaths = [
-    path.resolve('node_modules/bootstrap-sass/assets/fonts'),
-    path.resolve('node_modules/font-awesome-sass/assets/fonts')
-];
+const path = require('path');
+const webpackMerge = require('webpack-merge');
+
+const CommonConfig = require('./webpack.common');
 
 if (!process.env.ASSET_CDN_PATH) {
     throw new Error('No asset CDN path specified. Did you forget to define it?' +
 						' (In trooper env, or use cross-env)');
 }
+if (!process.env.BUNDLE_CDN_PATH) {
+    throw new Error('No bundle CDN path specified. Did you forget to define it?' +
+        ' (In trooper env, or use cross-env)');
+}
 
-module.exports = {
-    resolve: commons.resolve(),
 
-    context: commons.context(),
-
-    entry: commons.entry(),
-
-    output: commons.output(),
+module.exports = webpackMerge(CommonConfig, {
+    output: {
+        path: path.resolve('public/bundles'),
+        filename: '[name].[hash].js',
+        publicPath: process.env.BUNDLE_CDN_PATH
+    },
 
     plugins: [
         new webpack.DefinePlugin({
@@ -26,27 +27,14 @@ module.exports = {
                 NODE_ENV: JSON.stringify('production')
             }
         }),
-        commons.providePlugin(),
-        new ProgressBarPlugin(),
-        commons.stylelintPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
-                warnings: true
-            }
+                warnings: false
+            },
+            sourceMap: true
+        }),
+        new webpack.SourceMapDevToolPlugin({
+            filename: './sourcemaps/[name].[hash].js.map'
         })
-    ],
-
-    devServer: commons.devServer(),
-
-    module: {
-        rules: [
-            commons.preloadersEslint(),
-            commons.loadersBabel(),
-            commons.loadersGlobalStyle(),
-            commons.loadersStyle(),
-            commons.loadersFonts(fontPaths),
-            commons.loadersImages(fontPaths),
-            commons.loadersJson()
-        ]
-    }
-};
+    ]
+});
