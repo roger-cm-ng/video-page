@@ -1,7 +1,6 @@
 var path = require('path');
 
 module.exports = function exports() {
-    var test = path.resolve('styles');
     return {
         test: /\.(scss)$/,
         include: [path.resolve('styles')],
