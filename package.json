@@ -69,6 +69,7 @@
     "react-addons-css-transition-group": "^15.0.1",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.4.2",
+    "react-inlinesvg": "^0.6.2",
     "react-redux": "^4.4.0",
     "react-router-dom": "^4.1.2",
     "react-styleable": "^2.2.3",

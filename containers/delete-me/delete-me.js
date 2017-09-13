@@ -3,6 +3,7 @@ import styleable from 'react-styleable';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import Isvg from 'react-inlinesvg';
 import css from './delete-me.scss';
 import { getAlbum } from './delete-me-actions';
 
@@ -53,7 +54,7 @@ class DeleteMe extends Component {
                     <img alt="" src={pngSrc} />
                     <img alt="" src={jpegSrc} />
                     <img alt="" src={jpgSrc} />
-                    <img alt="" src={svgSrc} />
+                    <Isvg alt="" src={svgSrc} />
                     <img alt="" src={gifSrc} />
                 </div>
                 <h2>Test: {'<div className="css-backgroundImage-url">'}</h2>
