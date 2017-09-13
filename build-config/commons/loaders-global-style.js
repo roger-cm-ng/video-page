@@ -1,9 +1,7 @@
-var path = require('path');
-
-module.exports = function exports() {
+module.exports = function exports(globalStylePath) {
     return {
         test: /\.(scss)$/,
-        include: [path.resolve('styles')],
+        include: [ globalStylePath ],
         loaders: [
             {
                 loader: 'style-loader'
