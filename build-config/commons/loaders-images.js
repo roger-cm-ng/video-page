@@ -8,7 +8,7 @@ module.exports = function (fontPaths) {
                 options: {
                     name: '[hash].[ext]',
                     outputPath: 'assets/images/',
-                    publicPath: process.env.ASSET_CDN_PATH ? process.env.ASSET_CDN_PATH : ''
+                    publicPath: process.env.ASSET_CDN_PATH ? process.env.ASSET_CDN_PATH : '/'
                 }
             }
         ]
