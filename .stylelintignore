@@ -2,5 +2,6 @@ node_modules
 build-config
 public
 server
-styles
+styles/reset.scss
+styles/normalise.scss
 test-config

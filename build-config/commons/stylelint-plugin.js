@@ -7,8 +7,7 @@ module.exports = function exports() {
 		context: path.resolve('./'),
 		files: '**/*.scss',
 		failOnError: false,
-		quiet: false,
-		exclude: /bootstrap\.scss/
+		quiet: false
 	});
 };
 
