@@ -17,7 +17,6 @@ const createStoreWithMiddleware = applyMiddleware(thunk, reduxPromise)(createSto
 
 export default class BasicApp {
     constructor(element, dynamicOptions) {
-        BasicApp.installHistoryHandler();
         BasicApp.configure();
 
         this.element = element;
@@ -150,25 +149,5 @@ export default class BasicApp {
         }
 
         return usableCredentials;
-    }
-
-    static installHistoryHandler() {
-        // We want to ensure that we don't lose the query parameters like
-        // username and password as the user navigates through the app. This
-        // is important so that during development, we can refresh the browser
-        //
-        // To avoid this, we monkey-patch window.pushState() to append
-        // them if they are not there.
-
-        const queryParams = window.location.search;
-        const pushState = window.history.pushState;
-
-        window.history.pushState = (...args) => {
-            if (args[2].indexOf(queryParams) < 0) {
-                args[2] += queryParams;
-            }
-
-            return pushState.apply(this, args);
-        };
     }
 }
