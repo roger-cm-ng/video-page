@@ -1,4 +1,5 @@
-exports.commonCodeChunks = require('./common-code-chunks');
+exports.md5ChunkHashPlugin = require('./md5-chunk-hash');
+exports.commonCodeChunksPlugin = require('./common-code-chunks');
 exports.entry = require('./entry');
 exports.htmlWebpackPlugin = require('./html-webpack-plugin');
 exports.context = require('./context');

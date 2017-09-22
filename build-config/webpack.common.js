@@ -20,7 +20,8 @@ module.exports = {
         commons.providePlugin(),
         new ProgressBarPlugin(),
         commons.stylelintPlugin(),
-        commons.commonCodeChunks(),
+        commons.md5ChunkHashPlugin(),
+        ...commons.commonCodeChunksPlugin(),
         commons.htmlWebpackPlugin()
     ],
 
