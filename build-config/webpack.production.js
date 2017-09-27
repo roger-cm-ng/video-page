@@ -17,7 +17,7 @@ if (!process.env.BUNDLE_CDN_PATH) {
 module.exports = webpackMerge(CommonConfig, {
     output: {
         path: path.resolve('public/bundles'),
-        filename: '[name].[hash].js',
+        filename: '[name].[chunkhash].js',
         publicPath: process.env.BUNDLE_CDN_PATH
     },
 
