@@ -13,11 +13,14 @@ In a browser, go to <http://localhost:4567/#/home>
 
 #Creating components
 
-Install the *stubs-react* module globally
+Install the *stubs-react* module globally. Note that this is a version enhanced
+for use in 3P, rather than the one in the main npm repository.
 
 ```bash
-npm install stubs-react -g
+npm install -g git+https://bitbucket.org/mathletics/stubs-react.git#feature/jsdoc
 ```
+
+(You can drop the #feature/jsdoc branch info if/when Harry accepts my pull request.)
 
 Navigate to *components* folder and run one of the following commands, depending on the type of component.
 
