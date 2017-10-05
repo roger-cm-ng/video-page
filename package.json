@@ -1,14 +1,14 @@
 {
   "name": "3p-react-boilerplate",
   "version": "1.0.1",
-  "description": "",
+  "description": "React application template",
   "main": "./server/bin/www",
   "scripts": {
     "webpack:dev": "npm run nodemon | webpack --config build-config/webpack.dev -d",
     "webpack-production-local": "cross-env ASSET_CDN_PATH='http://localhost:4567/' BUNDLE_CDN_PATH='http://localhost:4567/' webpack --config build-config/webpack.production",
     "webpack-production": "webpack --config build-config/webpack.production",
     "webpack:production": "npm-run-all --sequential test webpack-production",
-    "test": "mocha --reporter spec test-config/test-setup.js \"components/**/*.spec.js\"",
+    "test": "mocha --reporter spec test-config/test-setup.js \"components/**/*.spec.js\" \"containers/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
     "start": "node ./server/bin/www",
     "eslint-fix": "./node_modules/.bin/eslint --fix ./",
