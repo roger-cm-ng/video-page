@@ -1,14 +1,15 @@
 {
   "name": "3p-react-boilerplate",
   "version": "1.0.1",
-  "description": "",
+  "description": "React application template",
   "main": "./server/bin/www",
   "scripts": {
+    "jsdoc": "jsdoc --configure jsdoc-config.json",
     "webpack:dev": "npm run nodemon | webpack --config build-config/webpack.dev -d",
     "webpack-production-local": "cross-env ASSET_CDN_PATH='http://localhost:4567/' BUNDLE_CDN_PATH='http://localhost:4567/' webpack --config build-config/webpack.production",
     "webpack-production": "webpack --config build-config/webpack.production",
     "webpack:production": "npm-run-all --sequential test webpack-production",
-    "test": "mocha --reporter spec test-config/test-setup.js \"components/**/*.spec.js\"",
+    "test": "mocha --reporter spec test-config/test-setup.js \"components/**/*.spec.js\" \"containers/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
     "start": "node ./server/bin/www",
     "eslint-fix": "./node_modules/.bin/eslint --fix ./",
@@ -88,6 +89,8 @@
     "whatwg-fetch": "^0.11.0"
   },
   "devDependencies": {
+    "chai": "^4.1.0",
+    "chai-jquery": "^2.0.0",
     "cors": "^2.8.4",
     "cross-env": "^5.0.5",
     "eslint": "^4.4.1",
@@ -98,6 +101,8 @@
     "eslint-plugin-react": "^7.0.1",
     "eslint-plugin-unicorn": "^2.1.2",
     "file-loader": "^0.11.2",
+    "ignore-styles": "^5.0.1",
+    "jquery": "^3.2.1",
     "nodemon": "^1.11.0",
     "postcss": "^6.0.8",
     "postcss-cssnext": "^3.0.2",
