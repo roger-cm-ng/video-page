@@ -48,7 +48,7 @@ export default class BasicApp {
         // How we want to configure things depends on where this app is running,
         // and where the services we want to access live.
         //
-        // 1. When running on a developer's machine, using a mock server we want
+        // 1. When running on a developer's machine, using a mock server, we want
         //    to use a hard-coded config from
         //
         //       helpers/local-resource-config.js
@@ -109,24 +109,22 @@ export default class BasicApp {
 
         if (BasicApp.weHaveUsableCredentials(credentials)) {
             Resources.initialise(envName, credentials);
+            Resources.env.setConfiguration(config);
         }
     }
 
     static getCredentials(params) {
         const credentials = {};
-        const config = window.pppAppConfig;
         const items = ['authToken', 'username', 'password'];
 
-        for (const item of items) {
-            let value = params[item];
+        for (const paramName in params) {
+            const value = params[paramName];
 
-            if (value === undefined) {
-                if (config) {
-                    value = config[item];
+            for (const item of items) {
+                if (paramName.toLowerCase() === item.toLowerCase()) {
+                    credentials[item] = value;
                 }
             }
-
-            credentials[item] = value;
         }
 
         return credentials;
