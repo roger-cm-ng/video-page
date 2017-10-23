@@ -1,46 +1,52 @@
-To use the boilerplate
-======================
+#Installing the boilerplate
 
-**npm install** and then
 
-**npm run webpack:dev** to build and watch
+```bash
+# install node modules
+npm install
 
-Start a second console and **npm run nodemon** to start the server
+# build and watch
+npm run webpack:dev
+```
 
-On a browser, go to <http://localhost:4567>
+In a browser, go to <http://localhost:4567/#/home>
 
-To start new component
-======================
+#Creating components
 
-**npm install stubs-react -g**
+Install the *stubs-react* module globally
 
-Navigate to *components* folder and run
+```bash
+npm install stubs-react -g
+```
 
-**stubs-react --c component-name --b** for entry component or
+Navigate to *components* folder and run one of the following commands, depending on the type of component.
 
-**stubs-react --c component-name** for redux component or
+**Notes**:
+- use **kebab-cased** component name, e.g. *my-component*. The correctly-cased class, action and reducer names 
+will be generated automatically.
 
-**stubs-react --c component-name --s** for stateless component
+- The optional **--b** flag makes the new component a bootstrap (entry) component.
 
-To specify a new or additional entry point
-==========================================
+## Redux component
+```bash
+stubs-react --c component-name [--b]
+```
 
-Open *build-config/commons/entry.js*
+##Stateless component
+```bash
+stubs-react --c component-name --s [--b]
+```
 
-Add **'bundle-file-name': 'path-to-entry-js'**
+#To specify a new or additional entry point
 
-The bundled file will be created in *public/bundles*
+Add the new bundle name and entry path following to the function return value in *build-config/commons/entry.js*:
 
-Naming convention for component
-===============================
+```
+'bundle-file-name': 'path-to-entry-js'
+```
 
-Please use kebab-case, the class, action and reducer names will be generated in corresponding pascal and camel names
+The bundled file will be created in *public/bundles*.
 
-DO NOT USE pascal-case or camel-case to name your component
-
-Enabling Bootstrap or Fontawesome
-=================================
+##Enabling Bootstrap or Fontawesome
 
 Please refer to styles/core.scss
-
-

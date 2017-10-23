@@ -8,11 +8,17 @@ if (!process.env.ASSET_CDN_PATH) {
     throw new Error('No asset CDN path specified. Did you forget to define it?' +
 						' (In trooper env, or use cross-env)');
 }
+if (!process.env.BUNDLE_CDN_PATH) {
+    throw new Error('No bundle CDN path specified. Did you forget to define it?' +
+        ' (In trooper env, or use cross-env)');
+}
+
 
 module.exports = webpackMerge(CommonConfig, {
     output: {
         path: path.resolve('public/bundles'),
-        filename: '[name].[hash].js'
+        filename: '[name].[chunkhash].js',
+        publicPath: process.env.BUNDLE_CDN_PATH
     },
 
     plugins: [

@@ -1,7 +1,13 @@
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const webpack = require('webpack');
-
+const path = require('path');
 const commons = require('./commons');
+
+const fontPaths = [
+    path.resolve('node_modules/bootstrap-sass/assets/fonts'),
+    path.resolve('node_modules/font-awesome-sass/assets/fonts')
+];
+const globalStylePath = path.resolve('styles');
 
 module.exports = {
     resolve: commons.resolve(),
@@ -14,7 +20,8 @@ module.exports = {
         commons.providePlugin(),
         new ProgressBarPlugin(),
         commons.stylelintPlugin(),
-        commons.commonCodeChunks(),
+        commons.md5ChunkHashPlugin(),
+        ...commons.commonCodeChunksPlugin(),
         commons.htmlWebpackPlugin()
     ],
 
@@ -24,10 +31,10 @@ module.exports = {
         rules: [
             commons.preloadersEslint(),
             commons.loadersBabel(),
-            commons.loadersGlobalStyle(),
-            commons.loadersStyle(),
-            commons.loadersFonts(),
-            commons.loadersImages(),
+            commons.loadersGlobalStyle(globalStylePath),
+            commons.loadersStyle(globalStylePath),
+            commons.loadersFonts(fontPaths),
+            commons.loadersImages(fontPaths),
             commons.loadersJson()
         ]
     }

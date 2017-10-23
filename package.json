@@ -1,14 +1,15 @@
 {
   "name": "3p-react-boilerplate",
   "version": "1.0.1",
-  "description": "",
+  "description": "React application template",
   "main": "./server/bin/www",
   "scripts": {
+    "jsdoc": "jsdoc --configure jsdoc-config.json",
     "webpack:dev": "npm run nodemon | webpack --config build-config/webpack.dev -d",
-    "webpack-production-local": "cross-env ASSET_CDN_PATH='http://localhost:4567/' webpack --config build-config/webpack.production",
+    "webpack-production-local": "cross-env ASSET_CDN_PATH='http://localhost:4567/' BUNDLE_CDN_PATH='http://localhost:4567/' webpack --config build-config/webpack.production",
     "webpack-production": "webpack --config build-config/webpack.production",
     "webpack:production": "npm-run-all --sequential test webpack-production",
-    "test": "mocha --reporter spec test-config/test-setup.js \"components/**/*.spec.js\"",
+    "test": "mocha --reporter spec test-config/test-setup.js \"components/**/*.spec.js\" \"containers/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
     "start": "node ./server/bin/www",
     "eslint-fix": "./node_modules/.bin/eslint --fix ./",
@@ -28,7 +29,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "3p-resource": "git+ssh://git@bitbucket.org/mathletics/3p-resource.git#1.0.5",
+    "3p-resource": "git+ssh://git@bitbucket.org/mathletics/3p-resource.git#1.1.1",
     "babel-cli": "^6.7.7",
     "babel-core": "^6.5.1",
     "babel-eslint": "^7.2.3",
@@ -69,6 +70,7 @@
     "react-addons-css-transition-group": "^15.0.1",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.4.2",
+    "react-inlinesvg": "^0.6.2",
     "react-redux": "^4.4.0",
     "react-router-dom": "^4.1.2",
     "react-styleable": "^2.2.3",
@@ -76,6 +78,7 @@
     "redux-actions": "^2.2.1",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
+    "routing-conserve-parameters": "git+ssh://git@bitbucket.org/mathletics/routing-conserve-parameters.git#1.0.0",
     "sass-flex-mixin": "^1.0.3",
     "sass-loader": "^3.1.2",
     "serve-favicon": "~2.1.3",
@@ -86,6 +89,8 @@
     "whatwg-fetch": "^0.11.0"
   },
   "devDependencies": {
+    "chai": "^4.1.0",
+    "chai-jquery": "^2.0.0",
     "cors": "^2.8.4",
     "cross-env": "^5.0.5",
     "eslint": "^4.4.1",
@@ -96,13 +101,16 @@
     "eslint-plugin-react": "^7.0.1",
     "eslint-plugin-unicorn": "^2.1.2",
     "file-loader": "^0.11.2",
-    "image-webpack-loader": "^3.3.1",
+    "ignore-styles": "^5.0.1",
+    "jquery": "^3.2.1",
     "nodemon": "^1.11.0",
     "postcss": "^6.0.8",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
+    "postcss-scss": "^1.0.2",
     "stylelint-webpack-plugin": "^0.7.0",
+    "webpack-md5-hash": "0.0.5",
     "webpack-merge": "^4.1.0"
   }
 }

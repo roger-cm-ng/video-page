@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import styleable from 'react-styleable';
 import { connect } from 'react-redux';
+import { Route, Switch, Link, withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import Isvg from 'react-inlinesvg';
 import css from './delete-me.scss';
 import { getAlbum } from './delete-me-actions';
 
@@ -53,7 +55,7 @@ class DeleteMe extends Component {
                     <img alt="" src={pngSrc} />
                     <img alt="" src={jpegSrc} />
                     <img alt="" src={jpgSrc} />
-                    <img alt="" src={svgSrc} />
+                    <Isvg alt="" src={svgSrc} />
                     <img alt="" src={gifSrc} />
                 </div>
                 <h2>Test: {'<div className="css-backgroundImage-url">'}</h2>
@@ -65,6 +67,15 @@ class DeleteMe extends Component {
                     <div className={gifBG} />
                 </div>
                 {albumDiv}
+                <div>
+                    <Link to="/">Home</Link><br />
+                    <Link to="/delete-me">Delete me route</Link><br />
+                    <Link to="/delete-me/read-params">Read params child route</Link>
+                    <Switch>
+                        <Route path="/delete-me/read-params" render={() => (<div>Params: {location.search}</div>)} />
+                        <Route render={() => (<div>No route found for: {location.pathname}</div>)} />
+                    </Switch>
+                </div>
             </div>
         );
     }
@@ -86,4 +97,4 @@ function mapDispatchToProps(dispatch) {
     }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeleteMe);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DeleteMe));

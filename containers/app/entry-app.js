@@ -2,15 +2,17 @@
 
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, browserHistory as history, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, browserHistory as history, Switch, Link } from 'react-router-dom';
+import ConserveParameters from 'routing-conserve-parameters';
 
 import BasicApp from './basic-app';
 import DeleteMe from '../delete-me/delete-me';
 
+ConserveParameters(['username', 'password', 'userToken']);
 
 export default class EntryApp extends BasicApp {
     render(store) {
-        // TODO: DEFINE THE TOP-LEVEL ROUTES FOR YOUR APPLICATION'S COMPONENTS HERE
+        // TODO: 4. DEFINE THE TOP-LEVEL ROUTES FOR YOUR APPLICATION'S COMPONENTS HERE
 
         // When executing on demo, QA, or production, the host app will inject a property
         // called pppAppConfig into the global window variable.  This will provide the
@@ -29,8 +31,8 @@ export default class EntryApp extends BasicApp {
             <Provider store={store}>
                 <Router history={history} basename={BASE_NAME}>
                     <Switch>
-                        <Route exact path="/" render={() => <h1>Whoo hoo!</h1>} />
-                        <Route exact path="/delete-me" render={() => <DeleteMe options={this.options} />} />
+                        <Route exact path="/" render={() => <h1>Whoo hoo! <Link to="/delete-me">Delete</Link></h1>} />
+                        <Route path="/delete-me" render={() => <DeleteMe options={this.options} />} />
                     </Switch>
                 </Router>
             </Provider>

@@ -8,6 +8,7 @@ module.exports = webpackMerge(CommonConfig, {
 
     output: {
         path: path.resolve('public/bundles'),
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: '/'
     }
 });
