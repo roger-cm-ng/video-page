@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <title>Video Page - DUCS</title>
+    <script src="http://demo.mathletics.com/static.mathletics.com/html/default-universal-content-screen/ducs_1.0.4.js"></script>
   </head>
   <body>
 		<h1>Video Page - DUCS</h1>
-    <!-- <div class="js-reload"></div>
-    <script src="bundles/hwrld-reload.js"></script>
+        <div class="DUCSApplication"></div>
     <script>
-      new HwrldReload(
-        '.js-reload',
-        {}
-      )
-    </script> -->
+        // NOTE: This code is only valid for development environments - it has no IE/Edge support!
+        const urlParams = new URLSearchParams(window.location.search);
+        DUCSApplication.initialise(
+            '.DUCSApplication',
+            urlParams.get('id'),
+            urlParams.get('locale'),
+            urlParams.get('layoutVersion'),
+            urlParams.get('contentVersion')
+        );
+    </script>
   </body>
 </html>
