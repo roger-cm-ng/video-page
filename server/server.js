@@ -6,7 +6,6 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import routes from './routes/index';
-import api from './routes/api';
 const app = express();
 
 // gzip
@@ -26,7 +25,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use('/', routes);
-app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

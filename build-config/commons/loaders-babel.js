@@ -1,8 +1,7 @@
-module.exports = function exports() {
+module.exports = function() {
   return {
-    test: /\.(js|jsx|es6)$/,
+    test: /\.(es6|js)$/,
     exclude: /node_modules/,
     loaders: ['babel-loader']
-  };
-};
-
+  }
+}

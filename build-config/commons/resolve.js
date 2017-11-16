@@ -1,12 +1,11 @@
-const path = require('path');
+var path = require('path');
+var webpack = require('webpack');
 
-module.exports = function exports() {
+module.exports = function() {
   return {
-    modules: [
-      path.join(__dirname, 'src'),
-      'node_modules'
-    ],
-		extensions: ['*', '.js', '.es6']
-	};
-};
-
+		root: [
+			path.resolve(path.join(__dirname, '..'))
+		],
+		extensions: ['', '.js', '.es6']
+	}
+}

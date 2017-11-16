@@ -1,6 +1,5 @@
-module.exports = function exports() {
+module.exports = function() {
   return {
-    'entry-app': ['babel-polyfill', './containers/app/entry-app']
-	};
-};
-
+    'hwrld-reload': './components/reload/hwrld-reload'
+	}
+}

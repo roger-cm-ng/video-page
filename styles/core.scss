@@ -1,20 +1,8 @@
 /* React Core CSS */
+@import 'variables';
+@import 'mixins';
 @import 'normalise';
 @import 'reset';
-@import '~sass-flex-mixin/flex';
-@import 'variables';
-
-/*
-// Enable use bootstrap
-// npm install bootstrap-sass --save
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/theme';
-*/
-
-/*
-// Enable use fontawesome
-// npm install font-awesome-sass --save
-$fa-font-path: "~font-awesome-sass/assets/fonts/font-awesome/";
-@import "~font-awesome-sass/assets/stylesheets/font-awesome";
-*/
+@import 'bootstrap';
+@import 'helloworld';
+@import 'animation';
