@@ -10,7 +10,7 @@ import { createStore, applyMiddleware } from 'redux';
 
 import { handleDefaults } from '../../helpers/utils';
 import CombinedReducers from './combined-reducers';
-import Resources from '../../helpers/resources';
+// import Resources from '../../helpers/resources';
 
 
 const createStoreWithMiddleware = applyMiddleware(thunk, reduxPromise)(createStore);
@@ -82,8 +82,8 @@ export default class BasicApp {
         let envName = params.env;
 
         if (!envName) {
-            console.log('BasicApp.configureForDeveloperMachine() - you did not provide an "env" query' +
-                            ' parameter, so I am assuming you want to talk to live.');
+            // console.log('BasicApp.configureForDeveloperMachine() - you did not provide an "env" query' +
+            //                 ' parameter, so I am assuming you want to talk to live.');
 
             envName = 'live';
         }
@@ -91,13 +91,13 @@ export default class BasicApp {
         const credentials = BasicApp.getCredentials(params);
 
         if (envName === 'local' || BasicApp.weHaveUsableCredentials(credentials)) {
-            Resources.initialise(envName, credentials);
+            // Resources.initialise(envName, credentials);
         }
     }
 
     static configureForRemoteHost(params) {
         const config = window.pppAppConfig;
-        const envName = config.env || 'live';
+        // const envName = config.env || 'live';
         const credentials = BasicApp.getCredentials(params);
 
         if (!config.BaseName) {
@@ -108,8 +108,8 @@ export default class BasicApp {
         }
 
         if (BasicApp.weHaveUsableCredentials(credentials)) {
-            Resources.initialise(envName, credentials);
-            Resources.env.setConfiguration(config);
+            // Resources.initialise(envName, credentials);
+            // Resources.env.setConfiguration(config);
         }
     }
 
@@ -140,10 +140,10 @@ export default class BasicApp {
         }
 
         if (!usableCredentials) {
-            console.error('EntryApp.configureForDeveloperMachine() - to execute, we need either an authToken or' +
-                ' a username/password pair.  After combining data from window.pppAppConfig and the query' +
-                ' parameters, I still do not have what I need. The app will probably not function correctly if' +
-                ' it requires any 3P resources.');
+            // console.error('EntryApp.configureForDeveloperMachine() - to execute, we need either an authToken or' +
+            //     ' a username/password pair.  After combining data from window.pppAppConfig and the query' +
+            //     ' parameters, I still do not have what I need. The app will probably not function correctly if' +
+            //     ' it requires any 3P resources.');
         }
 
         return usableCredentials;

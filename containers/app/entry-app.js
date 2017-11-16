@@ -3,12 +3,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, browserHistory as history, Switch, Link } from 'react-router-dom';
-import ConserveParameters from 'routing-conserve-parameters';
 
 import BasicApp from './basic-app';
-import DeleteMe from '../delete-me/delete-me';
-
-ConserveParameters(['username', 'password', 'userToken']);
 
 export default class EntryApp extends BasicApp {
     render(store) {
@@ -32,7 +28,6 @@ export default class EntryApp extends BasicApp {
                 <Router history={history} basename={BASE_NAME}>
                     <Switch>
                         <Route exact path="/" render={() => <h1>Whoo hoo! <Link to="/delete-me">Delete</Link></h1>} />
-                        <Route path="/delete-me" render={() => <DeleteMe options={this.options} />} />
                     </Switch>
                 </Router>
             </Provider>
