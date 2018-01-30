@@ -7,17 +7,17 @@
     <title>Video Page - DUCS</title>
     <script>
         const env = new URLSearchParams(window.location.search).get('env');
-    
+
         const authUrls = {
             "demo": "http://demo.mathletics.com/AuthenticationGateway/api",
             "qa": "http://gateway-qa.3plearning.com/AuthenticationGatewayV1/api",
             "live": "http://identity-gateway.3plearning.com/AuthenticationGatewayV1/api"
         };
-        
+
         const contentApiUrls = {
-            "demo": "http://demo.mathletics.com/content-api/",
-            "qa": "http://internalwebsite-qa.3plearning.com/content-api-v1/",
-            "live": "http://internal.3plearning.com/content-api-v1/	"
+            "demo": "http://demo.mathletics.com/catgateway/",
+            "qa": "http://internalwebsite-qa.3plearning.com/CatGateway_v1/",
+            "live": "http://internal.3plearning.com/CatGateway_v1/"
         };
 
         const cdnApiUrls = {
@@ -25,14 +25,14 @@
             "qa": "http://qa.cdn.mathletics.com/content-api",
             "live": "http://west.cdn.mathletics.com/content-api"
         };
-    
+
         // Dummy host configuration, required by 3P-resource
         window.pppAppConfig = {
             "AuthenticationGatewayEndpoint": authUrls[env],
             "BaseName": "/",
             "ConfigurationType": "window",
             "ContentApiEndpoint": contentApiUrls[env],
-            "CdnUrl": cdnUrls[env],
+            "CdnUrl": cdnApiUrls[env],
             "webpages:Version": "3.0.0.0",
             "webpages:Enabled": "false",
             "ClientValidationEnabled": "true",
@@ -40,7 +40,7 @@
             "env": env
         }
     </script>
-    <script src="//mzaue2.cdn.mathletics.com/html/default-universal-content-screen/ducs_1.0.15.js"></script>
+    <script src="//west.cdn.mathletics.com/html/default-universal-content-screen/ducs_1.0.32.js"></script>
 </head>
 <body>
 <h1>Video Page - DUCS</h1>
